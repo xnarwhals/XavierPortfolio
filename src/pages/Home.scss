@@ -1,0 +1,93 @@
+.home-page {
+  padding: 1rem 0 4rem;
+  display: grid;
+  gap: 2rem;
+}
+
+.home-hero {
+  display: grid;
+  gap: 0.75rem;
+  padding: clamp(1.2rem, 3vw, 1.8rem);
+  background: linear-gradient(145deg, rgba(255, 215, 0, 0.12), rgba(184, 134, 11, 0.2));
+  border: 1px solid rgba(255, 215, 0, 0.22);
+  border-radius: 1.4rem;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+}
+
+.home-kicker {
+  margin: 0;
+  display: inline-flex;
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(255, 215, 0, 0.12);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  color: #f7d774;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  width: fit-content;
+}
+
+.home-title {
+  margin: 0;
+  display: grid;
+  // font-size: clamp(2.4rem, 6vw, 3.8rem);
+  font-size: 2.4rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: #fff3b0;
+}
+
+.home-title span {
+  display: block;
+}
+
+.home-subtitle {
+  margin: 0;
+  font-size: 1.05rem;
+  color: #e5d9a8;
+}
+
+.home-body {
+  display: grid;
+  gap: 1rem;
+}
+
+.home-card {
+  padding: 1.1rem 1.25rem;
+  border-radius: 1rem;
+  background: rgba(255, 215, 0, 0.04);
+  border: 1px solid rgba(255, 215, 0, 0.18);
+  color: #f1e7b5;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);;
+}
+
+.home-card__label {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #e5c25c;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.home-card__text {
+  margin: 0.3rem 0 0;
+  color: #e9deaa;
+  line-height: 1.6;
+}
+
+.home-section-block {
+  width: 100%;
+  min-height: 500px;
+  justify-content: center;
+  display: flex;
+  gap: 1rem;
+  border: 2px solid red;
+  
+}
+
+@media (min-height: 900px) {
+  .home-page {
+    min-height: 100vh;
+  }
+}
