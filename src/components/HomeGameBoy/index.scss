@@ -4,38 +4,117 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    justify-items: center;
-    width: 80%;
+    background-color: transparent;
+
+    width: clamp(80%, 90vw, 400px);
+    aspect-ratio: 10 / 11; /* Adjust to match your GameBoy.png dimensions */
+    margin: 0 auto;
 }
 
 .screen {
+    position: absolute;
     background-color: black;
-    align-content: center;
-    
-    text-align: center;
-    word-spacing: -0.5rem;
     color: limegreen;
     font-family: 'Pixel', sans-serif;
-    font-size: 0.9rem;
+    font-size: clamp(0.6rem, 2vw, 0.9rem);
+    word-spacing: -0.5rem;
+    text-align: center;
+    border-radius: 9px;
 
-    width: 43%;
-    height: 51%;
-    margin-top: 11%;
+    /* Positioning relative to GameBoy image (adjust % to fit your image) */
+    top: 32%;
+    left: 28%;
+    width: 44%;
+    height: 30%;
+
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(0, 255, 0, 0.2);
+}
+
+.buttons {
+    position: absolute;
+    inset: 0;
 }
 
 .buttons button {
     position: absolute;
-    width: 50px;
-    height: 50px;
-    background: rgba(0, 0, 0, 0.2);
+    width: 7.5%;
+    aspect-ratio: 1;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(0, 0, 0, 0.5);
     border-radius: 50%;
     cursor: pointer;
+    transform: translate(-50%, -50%);
+    transition: background 0.1s;
+
+    &:hover {
+        background: rgba(0, 0, 0, 0.5);
+    }
 
     &.up {
-        top: 30%;
-        left: 15%;
+        border-radius: 0;
+        width: 4%;
+        height: 4%;
+        top: 42%;
+        left: 14%;
+    }
+
+    &.down {
+        border-radius: 0;
+        width: 4%;
+        height: 4%;
+        top: 49%;
+        left: 14%;
+    }
+
+    &.left {
+        border-radius: 0;
+        width: 4%;
+        height: 4%;
+        top: 45.5%;
+        left: 10%;
+    }
+
+    &.right {
+        border-radius: 0;
+        width: 4%;
+        height: 4%;
+        top: 45.5%;
+        left: 18%;
+    }
+
+    &.a {
+        width: 6%;
+        top: 44%;
+        left: 92%;
+    }
+
+    &.b {
+        width: 6%;
+        top: 47%;
+        left: 83%;
+    }
+
+    &.start {
+        width: 2.5%;
+        top: 58%;
+        left: 20.5%;
+    }
+
+    &.select {
+        width: 2.5%;
+        top: 63%;
+        left: 20.5%;
     }
 }
+
+/* Hide on mobile */
+// @media (max-width: 640px) {
+//     .home-gameboy {
+//         display: none;
+//     }
+// }
 
 
 

@@ -35,14 +35,14 @@ function HomeGameBoy() {
             {inputs.length >= 11 && !isKonamiUnlocked && <p className="error">Try Again!</p> }
         </div>
         <div className="buttons">
-            <button classNane="up" onClick={() => handleInput("Up")} />
-            <button classNane="down" onClick={() => handleInput("Down")} />
-            <button classNane="left" onClick={() => handleInput("Left")} />
-            <button classNane="right" onClick={() => handleInput("Right")} />
-            <button classNane="a" onClick={() => handleInput("A")} />
-            <button classNane="b" onClick={() => handleInput("B")} />
-            <button classNane="start" onClick={() => handleInput("Start")} />
-            <button classNane="select" onClick={handleReset} />
+            <button className="up" aria-label="Up" onClick={() => handleInput("Up")} />
+            <button className="down" aria-label="Down" onClick={() => handleInput("Down")} />
+            <button className="left" aria-label="Left" onClick={() => handleInput("Left")} />
+            <button className="right" aria-label="Right" onClick={() => handleInput("Right")} />
+            <button className="a" aria-label="A" onClick={() => handleInput("A")} />
+            <button className="b" aria-label="B" onClick={() => handleInput("B")} />
+            <button className="start" aria-label="Start" onClick={() => handleInput("Start")} />
+            <button className="select" aria-label="Reset" onClick={handleReset} />
         </div>
     </div>
   )
