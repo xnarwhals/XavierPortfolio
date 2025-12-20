@@ -35,9 +35,9 @@ const iconMap = {
 }
 
 function NavBar() {
-  const [isLocked, setIsLocked] = useState(false); // Konami code unlocks Secret Nav Bar
   const [isOpen, setIsOpen] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
+  const [opacity, setOpacity] = useState(0.2)
 
   useEffect(() => {
     if (typeof window === 'undefined') {
@@ -55,26 +55,38 @@ function NavBar() {
     }
   }, [])
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const max = 300
+      const value = Math.min(window.scrollY / max, 1)
+      setOpacity(0.2 + value * 0.6)
+    }
+    handleScroll()
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   const closeMenu = () => setIsOpen(false)
   const portfolioPath = isMobile ? '/quick-portfolio' : '/portfolio'
 
   return (
-    <aside className={`nav-bar ${isOpen ? 'nav-bar--open' : ''}`}>
-      <div className="nav-bar__top">
-        <Link className="nav-bar__brand" to="/" onClick={closeMenu}>
-          <span className="nav-bar__brand-mark">XG</span>
-          <span className="nav-bar__brand-text">Xavier Gonzalez</span>
-        </Link>
-        <button
-          type="button"
-          className="nav-bar__toggle"
-          aria-label="Toggle navigation menu"
-          aria-expanded={isOpen}
-          onClick={() => setIsOpen((open) => !open)}
-        >
-          <FontAwesomeIcon icon={faBars} />
-        </button>
-      </div>
+    <header
+      className={`nav-bar ${isOpen ? 'nav-bar--open' : ''}`}
+      style={{ backgroundColor: `rgba(6, 6, 6, ${opacity})` }}
+    >
+      <Link className="nav-bar__brand" to="/" onClick={closeMenu}>
+        <span className="nav-bar__brand-mark">XG</span>
+        <span className="nav-bar__brand-text">Xavier Gonzalez</span>
+      </Link>
+      <button
+        type="button"
+        className="nav-bar__toggle"
+        aria-label="Toggle navigation menu"
+        aria-expanded={isOpen}
+        onClick={() => setIsOpen((open) => !open)}
+      >
+        <FontAwesomeIcon icon={faBars} />
+      </button>
 
       <nav className="nav-bar__links">
         <NavLink
@@ -141,11 +153,11 @@ function NavBar() {
             onClick={closeMenu}
           >
             <FontAwesomeIcon icon={iconMap[item.label]} />
-            <span>{item.label}</span>
+
           </a>
         ))}
       </div>
-    </aside>
+    </header>
   )
 }
 

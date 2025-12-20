@@ -1,7 +1,6 @@
 .app-shell {
   min-height: 100vh;
   color: #f5e9c5;
-  gap: 0;
   width: 100vw;
   margin: 0;
   padding: 0;
@@ -9,7 +8,7 @@
 
 .app-shell__content {
   width: 100%;
-  padding: 0;
+  padding-top: 4.5rem;
 }
 
 h1,
@@ -26,7 +25,6 @@ p {
 
 @media (max-width: 900px) {
   .app-shell {
-    grid-template-columns: 1fr;
     width: 100vw;
     padding: 0;
   }

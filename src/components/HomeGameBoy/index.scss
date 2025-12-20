@@ -7,7 +7,8 @@
     background-color: transparent;
 
     width: clamp(80%, 90vw, 400px);
-    aspect-ratio: 10 / 11; /* Adjust to match your GameBoy.png dimensions */
+
+    aspect-ratio: 16 / 9; 
     margin: 0 auto;
 }
 
@@ -22,14 +23,28 @@
     border-radius: 9px;
 
     /* Positioning relative to GameBoy image (adjust % to fit your image) */
-    top: 32%;
+    top: 18%;
     left: 28%;
     width: 44%;
-    height: 30%;
+    height: 52%;
 
     display: grid;
     place-items: center;
     border: 1px solid rgba(0, 255, 0, 0.2);
+    gap: 0;
+
+    p {
+        color: limegreen;
+    }
+
+    h3 {
+        font-size: clamp(0.8rem, 3vw, 1rem);
+    }
+}
+
+.error {
+    margin-top: 20px;
+    color: red !important;
 }
 
 .buttons {
@@ -54,67 +69,70 @@
 
     &.up {
         border-radius: 0;
-        width: 4%;
-        height: 4%;
-        top: 42%;
-        left: 14%;
+        width: 5%;
+        height: 7%;
+        top: 34%;
+        left: 15%;
     }
 
     &.down {
         border-radius: 0;
-        width: 4%;
-        height: 4%;
+        width: 5%;
+        height: 7%;
         top: 49%;
-        left: 14%;
+        left: 15%;
     }
 
     &.left {
         border-radius: 0;
         width: 4%;
-        height: 4%;
-        top: 45.5%;
-        left: 10%;
+        height: 7%;
+        top: 41%;
+        left: 11%;
     }
 
     &.right {
         border-radius: 0;
         width: 4%;
-        height: 4%;
-        top: 45.5%;
-        left: 18%;
+        height: 7%;
+        top: 41%;
+        left: 19%;
     }
 
     &.a {
         width: 6%;
-        top: 44%;
-        left: 92%;
+        top: 38%;
+        left: 91%;
     }
 
     &.b {
         width: 6%;
-        top: 47%;
-        left: 83%;
+        top: 44%;
+        left: 82%;
     }
 
     &.start {
         width: 2.5%;
-        top: 58%;
-        left: 20.5%;
+        top: 65%;
+        left: 21.5%;
     }
 
     &.select {
         width: 2.5%;
-        top: 63%;
-        left: 20.5%;
+        top: 75%;
+        left: 21.5%;
     }
 }
 
-/* Hide on mobile */
-// @media (max-width: 640px) {
-//     .home-gameboy {
-//         display: none;
-//     }
-// }
+@media (max-width: 720px) {
+    .screen {
+        font-size: clamp(0.5rem, 2vw, 0.8rem);
+        
+        h3 {
+            font-size: clamp(0.3rem, 3vw, 0.5rem);
+        } 
+    }
+}
 
 
 

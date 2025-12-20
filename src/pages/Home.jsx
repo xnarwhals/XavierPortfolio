@@ -1,6 +1,15 @@
+import './Home.scss'
 import { Parallax } from 'react-parallax'
 import { useIsMobile } from '../hooks/useIsMobile'
-import './Home.scss'
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowDown } from '@fortawesome/free-solid-svg-icons'
+
+import GlitchText from '../components/GlitchText'
+import TextType from '../components/TextType'
+import LightRays from '../components/LightRays';
+
+import HomeGameBoy from '@/components/HomeGameBoy'
 
 function Home() {
   const isMobile = useIsMobile()
@@ -11,34 +20,49 @@ function Home() {
         className="home__hero"
         bgImage={isMobile ? "/Imgs/Misc/MobileBG.png": "/Imgs/Misc/BG.png"}
       >
-        <div className="home-text-container">
-          <p className="name-text">XG</p>
-          {/* Animated type writter subtitle (ios, game dev, fullstack) */}
-        </div>
-        {/* <div className="home__scroll-cue" aria-hidden="true">
-          <span />
-        </div> */}
+        <div className="home-hero-content">
+          <div className="home-text-container">
+            <GlitchText 
+              speed={1}
+              enableShadows={true}
+              enableOnHover={false}
+              className='custom-class'
+            >
+              XG
+            </GlitchText>
+          </div>
+          <div className='subtitle'>
+            <TextType
+              text={['Game', 'iOS', 'Frontend', 'Build']}
+              textColors={['gold']}
+              typingSpeed={100}
+              deletingSpeed={100}
+              />
+              <p>Developer</p>
+          </div>
+          <FontAwesomeIcon className='arrow-down' icon={faArrowDown}/>
+        </div> 
       </Parallax>
 
-      <section id="work" className="home__section">
+      <section id="Gameboy" className="home__section">
+        <LightRays
+          raysOrigin="top-center"
+          raysColor="#00ffff"
+          raysSpeed={1.5}
+          lightSpread={0.8}
+          rayLength={1.2}
+          followMouse={true}
+          mouseInfluence={0.1}
+          noiseAmount={0.1}
+          distortion={0.05}
+          className="custom-rays"
+        />
         <div className="home__section-inner">
-          <div>
-            <p className="home__section-kicker">Spotlight</p>
-            <h2 className="home__section-title">Recent builds</h2>
-            <p className="home__section-copy">
-              Swap this area for project cards, demo reels, or in-engine captures. The page keeps
-              scrolling so you can stack as much visual content as you want under the parallax hero.
-            </p>
-          </div>
-          <div className="home__placeholder-grid">
-            <div className="home__placeholder-card">Hero clip or reel</div>
-            <div className="home__placeholder-card">Feature highlight</div>
-            <div className="home__placeholder-card">Prototype / experiment</div>
-          </div>
+          <HomeGameBoy />
         </div>
       </section>
 
-      <section id="contact" className="home__section">
+      {/* <section id="contact" className="home__section">
         <div className="home__section-inner">
           <div>
             <p className="home__section-kicker">Stay in touch</p>
@@ -49,7 +73,7 @@ function Home() {
             </p>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   )
 }

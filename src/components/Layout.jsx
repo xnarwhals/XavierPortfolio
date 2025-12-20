@@ -4,6 +4,7 @@ import NavBar from './NavBar'
 function Layout() {
   return (
     <div className="app-shell">
+      <NavBar />
       <main className="app-shell__content">
         <Outlet />
       </main>

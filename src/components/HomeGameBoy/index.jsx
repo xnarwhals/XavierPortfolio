@@ -30,9 +30,11 @@ function HomeGameBoy() {
             {isKonamiUnlocked ? (
                 <p>🎉 Konami Code Unlocked! 🎉</p> // This triggers the locked secret nav bar icon to becoome clickable
             ) : (
-                <h3>INPUT: {inputs.join(", ")}</h3> // Show input 
+                <div className="input-display">
+                    <h3>INPUT: {inputs.join(", ")}</h3> 
+                    {inputs.length >= 11 && <p className="error">Try Again!</p> }
+                </div>
             )}
-            {inputs.length >= 11 && !isKonamiUnlocked && <p className="error">Try Again!</p> }
         </div>
         <div className="buttons">
             <button className="up" aria-label="Up" onClick={() => handleInput("Up")} />
