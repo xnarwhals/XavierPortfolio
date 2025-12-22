@@ -5,9 +5,9 @@ import { useIsMobile } from '../hooks/useIsMobile'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowDown } from '@fortawesome/free-solid-svg-icons'
 
-import GlitchText from '../components/GlitchText'
-import TextType from '../components/TextType'
-import LightRays from '../components/LightRays';
+import GlitchText from '../components/ReactBits/GlitchText'
+import TextType from '../components/ReactBits/TextType'
+import LightRays from '../components/ReactBits/LightRays';
 
 import HomeGameBoy from '@/components/HomeGameBoy'
 

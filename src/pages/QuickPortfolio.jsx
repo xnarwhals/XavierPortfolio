@@ -5,7 +5,6 @@ function QuickPortfolio() {
     <PageLayout
       kicker="Mobile cut"
       title="Quick portfolio"
-      description="A lighter version for smaller screens. Keep the essentials here and link out to the full stories."
     >
       <div className="info-grid">
         <div className="info-card">

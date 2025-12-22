@@ -5,7 +5,6 @@ function Portfolio() {
     <PageLayout
       kicker="Portfolio"
       title="Projects at a glance"
-      description="Showcase full case studies here—problem, approach, outcome. Swap in cards, galleries, or embeds on the right."
     >
       <div className="info-grid">
         <div className="info-card">

@@ -5,7 +5,6 @@ function Secret() {
     <PageLayout
       kicker="Easter egg"
       title="Secret corner"
-      description="Tuck away experiments, in-progress ideas, or a playful experience here."
     >
       <div className="info-grid">
         <div className="info-card">

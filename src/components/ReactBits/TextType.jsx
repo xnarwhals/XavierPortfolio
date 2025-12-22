@@ -22,6 +22,8 @@ const TextType = ({
   onSentenceComplete,
   startOnVisible = false,
   reverseMode = false,
+  forceComplete = false,
+  onTypingComplete,
   ...props
 }) => {
   const [displayedText, setDisplayedText] = useState('');
@@ -31,6 +33,7 @@ const TextType = ({
   const [isVisible, setIsVisible] = useState(!startOnVisible);
   const cursorRef = useRef(null);
   const containerRef = useRef(null);
+  const completedKeyRef = useRef('');
 
   const textArray = useMemo(() => (Array.isArray(text) ? text : [text]), [text]);
 
@@ -139,6 +142,37 @@ const TextType = ({
     reverseMode,
     variableSpeed,
     onSentenceComplete
+  ]);
+
+  useEffect(() => {
+    if (!isVisible) return;
+    const currentText = textArray[currentTextIndex];
+    const processedText = reverseMode ? currentText.split('').reverse().join('') : currentText;
+    if (!forceComplete) return;
+
+    setDisplayedText(processedText);
+    setCurrentCharIndex(processedText.length);
+    setIsDeleting(false);
+  }, [forceComplete, isVisible, currentTextIndex, reverseMode, textArray]);
+
+  useEffect(() => {
+    if (!onTypingComplete || !isVisible) return;
+    const currentText = textArray[currentTextIndex];
+    const processedText = reverseMode ? currentText.split('').reverse().join('') : currentText;
+    const key = `${currentTextIndex}-${processedText}`;
+
+    if (!isDeleting && currentCharIndex >= processedText.length && completedKeyRef.current !== key) {
+      completedKeyRef.current = key;
+      onTypingComplete(currentText, currentTextIndex);
+    }
+  }, [
+    currentCharIndex,
+    currentTextIndex,
+    isDeleting,
+    isVisible,
+    onTypingComplete,
+    reverseMode,
+    textArray
   ]);
 
   const shouldHideCursor =

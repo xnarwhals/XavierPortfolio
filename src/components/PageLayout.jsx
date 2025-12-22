@@ -3,22 +3,25 @@ import './PageLayout.scss'
 function PageLayout({
   kicker,
   title,
-  titleClassName = '',
-  description,
-  actions,
   children,
+  feature,
+  className,
+  footer,
 }) {
+  const hasFeature = Boolean(feature)
+  const pageClassName = ['page', className].filter(Boolean).join(' ')
+
   return (
-    <section className="page">
-      <div className="page__grid">
+    <section className={pageClassName}>
+      <div className={`page__grid ${hasFeature ? 'page__grid--feature' : ''}`}>
+        {hasFeature && <div className="page__feature">{feature}</div>}
         <div className="page__intro">
           {kicker && <p className="page__kicker">{kicker}</p>}
-          {title && <h1 className={`page__title ${titleClassName}`.trim()}>{title}</h1>}
-          {description && <p className="page__description">{description}</p>}
-          {actions && <div className="page__actions">{actions}</div>}
+          {title && <h1 className="page__title">{title}</h1>} 
+          <div className="page__content">{children}</div>
         </div>
-        <div className="page__content">{children}</div>
       </div>
+      {footer && <div className="page__footer">{footer}</div>}
     </section>
   )
 }

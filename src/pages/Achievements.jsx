@@ -5,7 +5,6 @@ function Achievements() {
     <PageLayout
       kicker="Highlights"
       title="Milestones & wins"
-      description="Use this canvas for awards, shipped features, talks, or anything else worth celebrating."
     >
       <div className="info-grid">
         <div className="info-card">
