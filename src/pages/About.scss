@@ -208,6 +208,14 @@
   margin-bottom: 0;
 }
 
+.about-timeline-title {
+  font-size: clamp(1.25rem, 3vw, 1.6rem);
+  margin: 0 0 1rem;
+  color: #fff5c0;
+  font-family: 'Sora', 'Trebuchet MS', sans-serif;
+  letter-spacing: -0.02em;
+}
+
 
 @media (max-width: 720px) {
   .timeline--scrollable {

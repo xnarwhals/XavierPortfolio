@@ -1,0 +1,35 @@
+<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" />
+      <feColorMatrix type="saturate" values="0"/>
+      <feBlend mode="multiply" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  
+  <!-- Base background -->
+  <rect width="500" height="500" fill="#d4c5a9"/>
+  
+  <!-- Polygon layers creating wrinkled paper effect -->
+  <polygon points="0,0 220,100 150,250 0,180" fill="#c9b89a" opacity="0.5"/>
+  <polygon points="220,100 500,0 500,220 350,180" fill="#e8dcc4" opacity="0.4"/>
+  <polygon points="150,250 350,180 380,350 220,400" fill="#bfae92" opacity="0.6"/>
+  <polygon points="350,180 500,220 500,380 380,350" fill="#d9cbb0" opacity="0.5"/>
+  <polygon points="0,180 150,250 220,400 0,350" fill="#c4b59d" opacity="0.45"/>
+  <polygon points="220,400 380,350 300,500 120,500" fill="#cebea5" opacity="0.55"/>
+  <polygon points="380,350 500,380 500,500 300,500" fill="#d1c2aa" opacity="0.4"/>
+  <polygon points="0,350 220,400 120,500 0,500" fill="#b8a88f" opacity="0.6"/>
+  
+  <!-- Middle facets for depth -->
+  <polygon points="220,100 350,180 260,220 150,250" fill="#d6c7ad" opacity="0.35"/>
+  <polygon points="350,180 380,350 280,300 260,220" fill="#c0af94" opacity="0.45"/>
+  <polygon points="150,250 260,220 280,300 220,400" fill="#ccbd9f" opacity="0.5"/>
+  
+  <!-- Additional detail polygons -->
+  <polygon points="0,0 100,60 220,100" fill="#dad0b8" opacity="0.3"/>
+  <polygon points="500,0 400,120 500,220" fill="#c7b79e" opacity="0.35"/>
+  <polygon points="100,60 150,180 220,100 150,250" fill="#cab999" opacity="0.4"/>
+  
+  <!-- Subtle texture overlay -->
+  <rect width="500" height="500" fill="#d4c5a9" opacity="0.08" filter="url(#noise)"/>
+</svg>

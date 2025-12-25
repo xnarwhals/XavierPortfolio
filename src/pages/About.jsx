@@ -21,23 +21,26 @@ function About() {
       title="Who is Xavier Gonzalez?"
       className="page--about"
       feature={(
-        <ul className="timeline timeline--scrollable">
-          {TIMELINE.map((item, index) => (
-            <li key={item.title} className="timeline__item">
-              <button
-                type="button"
-                className={`timeline__item-button ${index === activeIndex ? 'is-active' : ''}`}
-                onClick={() => setActiveIndex(index)}
-                aria-pressed={index === activeIndex}
-              >
-                <span className="timeline__dot" />
-                <p className="timeline__period">{item.period}</p>
-                <p className="timeline__title">{item.title}</p>
-                <p className="timeline__subtitle">{item.subtitle}</p>
-              </button>
-            </li>
-          ))}
-        </ul>
+        <>
+          <h2 className="about-timeline-title">My Journey So Far</h2>
+          <ul className="timeline timeline--scrollable">
+            {TIMELINE.map((item, index) => (
+              <li key={item.title} className="timeline__item">
+                <button
+                  type="button"
+                  className={`timeline__item-button ${index === activeIndex ? 'is-active' : ''}`}
+                  onClick={() => setActiveIndex(index)}
+                  aria-pressed={index === activeIndex}
+                >
+                  <span className="timeline__dot" />
+                  <p className="timeline__period">{item.period}</p>
+                  <p className="timeline__title">{item.title}</p>
+                  <p className="timeline__subtitle">{item.subtitle}</p>
+                </button>
+              </li>
+            ))}
+          </ul>      
+        </>
       )}
       children={(<AboutDialouge />)}
       footer={(

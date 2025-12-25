@@ -1,37 +1,50 @@
+import './Achievements.scss'
 import PageLayout from '../components/PageLayout'
+import AchievementsData from '../data/AchievementsData'
+import CertificateCard from '../components/CertificateCard'
+import AchievementCard from '../components/AchievementCard'
+
+import AnimatedContent from '../components/ReactBits/AnimatedContent'
+import Header from '../components/Header'
+
 
 function Achievements() {
   return (
     <PageLayout
-      kicker="Highlights"
-      title="Milestones & wins"
+      kicker="Xavier's Certificates"
+      title="Just Getting Started!"
+      className="page--achievements"
+      feature={
+        <div className='achievement-feature'>
+          <Header />
+          <div className="achievement-container">
+            {AchievementsData.achievements.map((achievement) => (
+              <AchievementCard key={achievement.id} achievement={achievement} />
+            ))}
+          </div>
+        </div>
+      }
+      children={
+        <div className='certificate-board'>
+          {AchievementsData.certificates.map((certificate) => (
+            <AnimatedContent
+              key={certificate.id}
+              distance={200}
+              direction="vertical"
+              reverse={true}
+              duration={0.8}
+              ease="bounce.out"
+              initialOpacity={0}
+              scale={1.05}
+              threshold={0.1}
+              delay={0.4 * certificate.id}
+            >
+              <CertificateCard cert={certificate} />
+            </AnimatedContent>
+          ))}
+        </div>
+      }
     >
-      <div className="info-grid">
-        <div className="info-card">
-          <p className="info-card__label">Recent win</p>
-          <p className="info-card__title">Feature launch</p>
-          <p className="info-card__text">
-            Placeholder for a quick story—what the challenge was, how you solved it, and the
-            impact it delivered.
-          </p>
-        </div>
-        <div className="info-card">
-          <p className="info-card__label">Recognition</p>
-          <p className="info-card__title">Team shoutout</p>
-          <p className="info-card__text">
-            Swap this with accolades, press mentions, or testimonials that reinforce your
-            strengths.
-          </p>
-        </div>
-        <div className="info-card">
-          <p className="info-card__label">Metric</p>
-          <p className="info-card__title">Impact snapshot</p>
-          <p className="info-card__text">
-            Call attention to outcomes: performance boosts, adoption, or other measurable
-            results.
-          </p>
-        </div>
-      </div>
     </PageLayout>
   )
 }
