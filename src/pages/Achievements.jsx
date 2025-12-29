@@ -16,7 +16,7 @@ function Achievements() {
       className="page--achievements"
       feature={
         <div className='achievement-feature'>
-          <Header />
+          <Header title="Achievements" />
           <div className="achievement-container">
             {AchievementsData.achievements.map((achievement) => (
               <AchievementCard key={achievement.id} achievement={achievement} />

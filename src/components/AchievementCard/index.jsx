@@ -5,7 +5,7 @@ function AchievementCard( { achievement } ) {
     return (
         <div className="achievement-card">
             <div className="achievement-media">
-                <img className="icon" src={achievement.iconImg} alt={`${achievement.title} icon`} />
+                <img className="a-icon" src={achievement.iconImg} alt={`${achievement.title} icon`} />
             </div>
             <div className="achievement-info">
                 <h3 className="achievement-title">{achievement.title}</h3>

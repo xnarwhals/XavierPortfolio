@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import { HashRouter } from 'react-router-dom'
 import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
+import 'devicon/devicon.min.css'
 import './index.css'
 import App from './App.jsx'
 
@@ -17,5 +18,4 @@ root.render(
     </DndProvider>
   </React.StrictMode>
 )
-
 

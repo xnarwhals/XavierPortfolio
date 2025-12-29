@@ -1,0 +1,13 @@
+.cartridge {
+    display: inline-block;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    
+    img {
+        display: block;
+    }
+
+    &:hover {
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); // Add a shadow on hover
+        transform: scale(1.005);
+    }
+}

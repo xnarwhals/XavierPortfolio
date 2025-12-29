@@ -1,0 +1,56 @@
+
+const cartridgeData = [
+    {
+        id: "Selva",
+        image: '/Imgs/Games/Game_Selva.png',
+        trailerUrl: "https://www.youtube.com/embed/h2abkQpf6_M?si=xefEiDqt4xxHcaRl", 
+        backImg: '/Imgs/Games/SelvaBack.png',
+        frontImg: '/Imgs/Games/Selva.png',
+        colors: {
+            mainColor: "#C1E899",
+            complementaryColor: "#9A6735",
+            textColor: "#55883B"
+        },
+        gameGist: "2022 Jungle Adventure 2D Platformer",
+        experience: "Unity Engine Workflow, Dynamic Player Movement, Intro to C#, and Tilemapping",
+        itchLink: "https://gameheads.itch.io/selva",
+        platforms: "Windows, Mac, Controller Support"
+    },
+    {
+        id: "Colorezz",
+        image: '/Imgs/Games/Game_Colorezz.png',
+        trailerUrl: "https://www.youtube.com/embed/ULZr5-ryP3c?si=G7HqJ5HJ6TUoYi-v",
+        backImg: '/Imgs/Games/ColorezzBack.png',
+        frontImg: '/Imgs/Games/Colorezz.png',
+        colors: {
+            mainColor: "#219ebc",
+            complementaryColor: "#fb8500",
+            textColor: "#00FFFF"
+        },
+        gameGist: "2023 Fixed 2D First Person Shooter",
+        experience: "Basic Shader Graph, Unity New Input System, Version Control, and Working with Other Programmers",
+        itchLink: "https://gameheads.itch.io/colorezz",
+        platforms: "Windows, Mac, Controller Support"
+    },
+    {
+        id: "Apt510",
+        image: '/Imgs/Games/Game_Apt510.png',
+        trailerUrl: "https://www.youtube.com/embed/jrzt0Dyz0MU?si=v5-pfKBY-LGzJQE3",
+        backImg: '/Imgs/Games/VPVRBack.png',
+        frontImg: '/Imgs/Games/VPVR.png',
+        colors: {
+            mainColor: "#7E5CAD",
+            complementaryColor: "#EB3678",
+            textColor: "#180161"
+        },
+        gameGist: "2024 VR Puzzle Escape Room",
+        experience: "First 3D Project, Baked Lighting, Use of Static Data, and Understanding of Unity XR Interaction Framework",
+        itchLink: "https://gameheads.itch.io/apartment-510",
+        platforms: "Oculus Quest, Oculus Rift, HTC Vive"
+        
+
+    }
+
+]
+
+export default cartridgeData;

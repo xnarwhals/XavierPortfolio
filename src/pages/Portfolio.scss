@@ -1,0 +1,30 @@
+.portfolio-feature {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.main-content {
+    margin-top: 3rem;
+    width: 100%;
+}
+
+.swap-btn {
+    margin-top: 1rem;
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    font-family: 'Sora', 'Trebuchet MS', sans-serif;
+    color: #fff5c0;
+    background: rgba(255, 215, 0, 0.15);
+    border: 1px solid rgba(255, 215, 0, 0.35);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+
+@media (max-width: 700px) {
+    .portfolio-controls {
+        grid-template-columns: 1fr;
+    }
+}

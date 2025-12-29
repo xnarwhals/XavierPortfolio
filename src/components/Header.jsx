@@ -1,11 +1,20 @@
 import React, { useState, useEffect } from 'react';
-import { Award } from 'lucide-react';
+import { Award, Gamepad2, Calendar } from 'lucide-react';
 
-// AI generated 
+// AI generated reusable header
 
-export default function FunAchievementsHeader() {
+export default function FunAchievementsHeader( { title }) {
   const [glowIntensity, setGlowIntensity] = useState(0);
   const [particles, setParticles] = useState([]);
+
+  const iconMap = {
+    "Achievements": <Award className="w-7 h-7 text-yellow-400 shrink-0" />,
+    "How To Play": <Gamepad2 className="w-7 h-7 text-blue-400 shrink-0" />,
+    "Timeline": <Calendar className="w-7 h-7 text-green-400 shrink-0" />,
+    "Cartridges": <Gamepad2 className="w-7 h-7 text-purple-400 shrink-0" />,
+    "Skillset": <Award className="w-7 h-7 text-red-400 shrink-0" />,
+  }
+
 
   useEffect(() => {
     // Pulsing glow effect
@@ -80,8 +89,8 @@ export default function FunAchievementsHeader() {
             `,
             filter: 'drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5))'
           }}>
-          <Award className="w-7 h-7 text-yellow-400 shrink-0" />
-          <span>Achievements</span>
+          {iconMap[title] || <Award className="w-7 h-7 text-yellow-400 shrink-0" />}
+          <span>{title}</span>
         </h2>
       </div>
 

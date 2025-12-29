@@ -3,6 +3,7 @@ import PageLayout from '../components/PageLayout'
 import TIMELINE from '../data/Timeline'
 import Stack from '@/components/ReactBits/Stack'
 import AboutDialouge from '../components/AboutDialouge'
+import Header from '../components/Header'
 import './About.scss'
 
 function About() {
@@ -21,8 +22,8 @@ function About() {
       title="Who is Xavier Gonzalez?"
       className="page--about"
       feature={(
-        <>
-          <h2 className="about-timeline-title">My Journey So Far</h2>
+        <div className='about-feature'>
+          <Header title="Timeline"/>
           <ul className="timeline timeline--scrollable">
             {TIMELINE.map((item, index) => (
               <li key={item.title} className="timeline__item">
@@ -40,7 +41,7 @@ function About() {
               </li>
             ))}
           </ul>      
-        </>
+        </div>
       )}
       children={(<AboutDialouge />)}
       footer={(

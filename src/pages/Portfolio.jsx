@@ -1,34 +1,45 @@
+import './Portfolio.scss'
+import { useState } from 'react'
 import PageLayout from '../components/PageLayout'
 
+import Header from '../components/Header'
+import How2Play from '../components/How2Play'
+import CartridgeDisplay from '../components/CartridgeDisplay'
+import Gameboy from '../components/Gameboy'
+
+
 function Portfolio() {
+  const [showHow2Play, setShowHow2Play] = useState(true)
+
+  const handleToggle = () => {
+    setShowHow2Play((prev) => !prev)
+  }
+
   return (
     <PageLayout
-      kicker="Portfolio"
-      title="Projects at a glance"
+      kicker="Interactive Portfolio"
+      title="Version 2.0"
+      className="page--portfolio"
+      feature={
+        <div className='portfolio-feature'>
+          <Header title={showHow2Play ? 'How To Play' : 'Cartridges'} /> 
+          {showHow2Play ? <How2Play /> : <CartridgeDisplay />}
+          <button onClick={handleToggle} className='swap-btn'>
+            {showHow2Play ? 'Show Cartridges' : 'Show Controls'}
+          </button>
+        </div>
+      }
+      children={
+        <div className="main-content">
+          <Gameboy />
+        </div>
+      }
+      footer={
+        <p className="footer-note">
+          Pixel Overworld goes here!
+        </p>
+      }
     >
-      <div className="info-grid">
-        <div className="info-card">
-          <p className="info-card__label">Project slot</p>
-          <p className="info-card__title">Flagship build</p>
-          <p className="info-card__text">
-            Add a short blurb for your lead project with links, media, or a deeper write-up.
-          </p>
-        </div>
-        <div className="info-card">
-          <p className="info-card__label">Project slot</p>
-          <p className="info-card__title">Prototype or experiment</p>
-          <p className="info-card__text">
-            Capture quick wins, prototypes, or explorations that show range and speed.
-          </p>
-        </div>
-        <div className="info-card">
-          <p className="info-card__label">Project slot</p>
-          <p className="info-card__title">Collaboration</p>
-          <p className="info-card__text">
-            Highlight team work—what you owned, how you partnered, and what shipped.
-          </p>
-        </div>
-      </div>
     </PageLayout>
   )
 }

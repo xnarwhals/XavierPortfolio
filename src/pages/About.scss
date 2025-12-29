@@ -20,7 +20,7 @@
 }
 
 .timeline--scrollable {
-  max-height: 420px;
+  max-height: 300px;
   overflow-y: auto;
   padding-right: 0.5rem;
   scrollbar-width: thin;
@@ -216,6 +216,12 @@
   letter-spacing: -0.02em;
 }
 
+.about-feature {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
 
 @media (max-width: 720px) {
   .timeline--scrollable {
@@ -225,4 +231,5 @@
   .about-timeline-split {
     grid-template-columns: 1fr;
   }
+
 }

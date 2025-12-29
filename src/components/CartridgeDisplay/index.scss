@@ -1,0 +1,27 @@
+.cartridge-carousel {
+  width: 100%;
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  background: rgba(5, 5, 5, 0.5);
+  display: grid;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+}
+
+.cartridge-carousel__viewport {
+  display: grid;
+  place-items: center;
+  min-height: clamp(220px, 34vw, 320px);
+}
+
+.cartridge-carousel__slide {
+  width: 90%;
+  display: grid;
+  place-items: center;
+}
+
+.cartridge-carousel__controls {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+}
