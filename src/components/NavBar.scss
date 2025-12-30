@@ -1,5 +1,4 @@
 .nav-bar {
-
   position: fixed;
   top: 0;
   left: 0;
@@ -24,7 +23,7 @@
 }
 
 .nav-bar__brand-mark {
-
+  font-family: 'initals';
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -56,7 +55,6 @@
 }
 
 .nav-bar__links {
-
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
@@ -175,4 +173,9 @@
   .nav-bar__social {
     grid-area: social;
   }
+}
+
+@font-face {
+  font-family: 'initals';
+  src: url('/Fonts/IrishGrover-Regular.ttf') format('truetype');
 }

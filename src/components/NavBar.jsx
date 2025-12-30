@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useLocation } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faBars,
@@ -35,6 +35,7 @@ const iconMap = {
 }
 
 function NavBar() {
+  const location = useLocation()
   const [isOpen, setIsOpen] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
   const [opacity, setOpacity] = useState(0.2)
@@ -67,6 +68,12 @@ function NavBar() {
   }, [])
 
   const closeMenu = () => setIsOpen(false)
+  const handleHomeClick = () => {
+    closeMenu()
+    if (location.pathname === '/') {
+      window.dispatchEvent(new Event('home:reset'))
+    }
+  }
   const portfolioPath = isMobile ? '/quick-portfolio' : '/portfolio'
 
   return (
@@ -74,7 +81,7 @@ function NavBar() {
       className={`nav-bar ${isOpen ? 'nav-bar--open' : ''}`}
       style={{ backgroundColor: `rgba(6, 6, 6, ${opacity})` }}
     >
-      <Link className="nav-bar__brand" to="/" onClick={closeMenu}>
+      <Link className="nav-bar__brand" to="/" onClick={handleHomeClick}>
         <span className="nav-bar__brand-mark">XG</span>
         <span className="nav-bar__brand-text">Xavier Gonzalez</span>
       </Link>
@@ -95,7 +102,7 @@ function NavBar() {
           className={({ isActive }) =>
             `nav-bar__link ${isActive ? 'is-active' : ''}`
           }
-          onClick={closeMenu}
+          onClick={handleHomeClick}
         >
           <FontAwesomeIcon icon={faHome} />
           <span>Home</span>

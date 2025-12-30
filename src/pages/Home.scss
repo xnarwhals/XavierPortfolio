@@ -1,109 +1,148 @@
-.home {
-  color: #e8ecf5;
-  background: #050505;
-  width: 100%;
-  min-height: 100vh;
-}
-
-.home__hero {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  min-height: 520px;
+.home-menu {
   display: grid;
-  place-items: center;
+  gap: 0.2rem;
+  align-content: start;
 }
 
-.home-hero-content {
-  top: 0;
-  display: grid;
-  gap: 0.85rem;
-  align-items: center;
-  justify-items: center;
+.home-initials {
+  font-family: 'homepage';
+  font-size: clamp(3rem, 9vw, 5.6rem);
+  color: #e6e55a;
+  letter-spacing: 0.08em;
+  line-height: 0.9;
 }
 
-.home-text-container {
-  text-align: center;
-  margin: 0 auto;
-  display: grid;
-  gap: 0.75rem;
-  align-items: center;
-  justify-items: center;
-  padding: 1rem;
-}
-
-.arrow-down {
-  position: absolute;
-  bottom: -60%;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: clamp(1.5rem, 4vw, 3rem);
-  color: gold;
-  animation: scroll-cue 2s infinite;
-}
-
-.custom-class {
-  font-size: clamp(5rem, 15vw, 12rem);
-}
-
-.subtitle {
-  font-size: clamp(1.2rem, 3vw, 2rem);
+.home-subtext {
+  font-family: 'homepage-sub';
+  font-size: clamp(2.8rem, 8vw, 5rem);
   display: flex;
-  gap: 0.25rem;
-  justify-content: center;
-  font-family: 'Roboto';
-  font-weight: 800;
+  flex-direction: column;
+  margin-top: -0.2rem;
+}
 
-  p {
-    color: white;
+.home-subtext span {
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  color: #ffffff;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+.home-menu__nav {
+  display: grid;
+  gap: 0.8rem;
+  margin-top: 1.2rem;
+}
+
+.home-menu__confirm {
+  margin-top: 0.4rem;
+  font-size: clamp(0.75rem, 2.5vw, 1rem);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.menu-item {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: #ffffff;
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  cursor: pointer;
+  padding: 0;
+}
+
+.menu-item__confirm {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 0.6rem;
+  font-size: clamp(0.65rem, 2vw, 0.9rem);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.menu-item__arrow {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 14px solid rgba(255, 255, 255, 0.7);
+  opacity: 0;
+  transition: opacity 0.2s ease, border-color 0.2s ease;
+}
+
+.menu-item:hover .menu-item__arrow {
+  opacity: 1;
+}
+
+.menu-item--active .menu-item__arrow {
+  animation: arrow-blink 1.5s infinite;
+  opacity: 1;
+  border-left-color: #e6e55a;
+}
+
+.menu-item__label {
+  color: #ffffff;
+}
+
+.menu-item--active .menu-item__label {
+  color: #e6e55a;
+}
+
+.home-menu__links {
+  display: flex;
+  gap: 1.2rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.home-menu__links a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+}
+
+.home-menu__links a:hover {
+  color: #e6e55a;
+}
+
+@media (max-width: 900px) {
+  .home-menu {
+    text-align: center;
+    justify-items: center;
+  }
+
+  .home-menu__nav {
+    justify-items: center;
+  }
+
+  .menu-item {
+    font-size: 1.4rem;
   }
 }
 
-.custom-rays {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-
-}
-
-// Sections
-.home__section {
-  border: 1px solid red;
-  padding: clamp(2rem, 6vw, 3.5rem) 0;
-}
-
-.home__section-inner {
-  width: min(1100px, 92vw);
-  margin: 0 auto;
-  display: grid;
-  gap: 1.5rem;
-}
-
-@keyframes scroll-cue {
+@keyframes arrow-blink {
   0%, 100% {
     opacity: 1;
-    transform: translateX(-50%) translateY(0);
   }
   50% {
-    opacity: 0.5;
-    transform: translateX(-50%) translateY(10%);
+    opacity: 0.3;
   }
 }
 
 @font-face {
-  font-family: 'home-font';
-  src: url('/Fonts/UchronyCubeBold-MVX1P.ttf') format('truetype');
+  font-family: 'homepage';
+  src: url('/Fonts/IrishGrover-Regular.ttf') format('truetype');
 }
 
-@media (max-width: 720px) {
-  .custom-rays {
-    display: none;
-  }
-
-  .arrow-down {
-    bottom: -200%;
-    font-size: 9vw;
-  }
+@font-face {
+  font-family: 'homepage-sub';
+  src: url('/Fonts/RubikMonoOne-Regular.ttf') format('truetype');
 }

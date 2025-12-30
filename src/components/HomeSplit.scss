@@ -1,0 +1,98 @@
+.home-split {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 4.5rem);
+  min-height: 520px;
+  overflow: hidden;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #060606;
+}
+
+.home-split__panel {
+  position: absolute;
+  inset: 0;
+}
+
+.home-split__panel--left {
+  background: #050505;
+}
+
+.home-split__panel--right {
+  position: absolute;
+}
+
+.home-split__panel-inner {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: clamp(2rem, 4vw, 3.5rem);
+}
+
+.home-split__panel-inner--right {
+  justify-content: center;
+}
+
+.home-split__content {
+  width: 100%;
+  max-width: 420px;
+}
+
+.home-split__content--right {
+  width: 100%;
+  height: 100%;
+}
+
+.home-split__right-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.home-split__right-bg > * {
+  width: 100%;
+  height: 100%;
+}
+
+.home-split__divider {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.home-split__divider--light {
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.home-split__divider--dark {
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.home-split__vignette {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.45) 100%);
+}
+
+.home-split__mobile {
+  position: absolute;
+  inset: 0;
+  display: none;
+}
+
+.home-split__mobile-pane {
+  height: 50%;
+  padding: 1.8rem 1.5rem;
+}
+
+.home-split__mobile-pane--left {
+  background: #050505;
+}
+
+@media (max-width: 900px) {
+  .home-split__mobile {
+    display: block;
+  }
+}
