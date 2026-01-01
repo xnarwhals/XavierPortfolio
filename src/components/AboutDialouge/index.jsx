@@ -1,10 +1,28 @@
 import './index.scss';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import DialougeText from '@/data/DialougeText'; // binary tree structure for dialouge options
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import TextType from '../ReactBits/TextType'; // all text in text-box displayed with this component (not choices/buttons)
+import { useQuestProgress } from '@/context/QuestProgressContext';
 
+const QUEST_STORAGE_KEY = 'aboutDialogueLeafs';
+const QUEST_ID = 1;
+
+const collectLeafIds = (node, acc = []) => {
+    if (!node) return acc;
+    if (node.end && node.id) {
+        acc.push(node.id);
+        return acc;
+    }
+    if (node.choices) {
+        collectLeafIds(node.choices.left?.node, acc);
+        collectLeafIds(node.choices.right?.node, acc);
+    }
+    return acc;
+};
+
+// SVG found online
 function NamePlate({ name = 'Xavier' }) {
     return (
         <svg
@@ -66,6 +84,18 @@ function AboutDialouge() {
     const [forceComplete, setForceComplete] = useState(false);
     const [forceCompleteToken, setForceCompleteToken] = useState(0);
     const [choicesArmed, setChoicesArmed] = useState(false);
+    const { completeQuest } = useQuestProgress();
+
+    const leafIds = useMemo(() => collectLeafIds(DialougeText.root), []);
+    const [visitedLeafIds, setVisitedLeafIds] = useState(() => {
+        try {
+            const saved = localStorage.getItem(QUEST_STORAGE_KEY);
+            const parsed = saved ? JSON.parse(saved) : [];
+            return Array.isArray(parsed) ? parsed : [];
+        } catch (error) {
+            return [];
+        }
+    });
 
     const line = currentNode.lines[lineIndex] || '';
     const isEnd = currentNode.end || false;
@@ -78,6 +108,17 @@ function AboutDialouge() {
         setForceComplete(false);
         setChoicesArmed(false);
     }, [currentNode, lineIndex]);
+
+    useEffect(() => {
+        try {
+            localStorage.setItem(QUEST_STORAGE_KEY, JSON.stringify(visitedLeafIds));
+        } catch (error) {
+            // Ignore storage errors.
+        }
+        if (leafIds.length > 0 && visitedLeafIds.length === leafIds.length) {
+            completeQuest(QUEST_ID);
+        }
+    }, [visitedLeafIds, leafIds, completeQuest]);
     
     const handleNext = () => {
         if (!isTypingComplete) {
@@ -98,6 +139,9 @@ function AboutDialouge() {
         }
 
         if (currentNode.end) {
+            if (currentNode.id && !visitedLeafIds.includes(currentNode.id)) {
+                setVisitedLeafIds((prev) => [...prev, currentNode.id]);
+            }
             setCurrentNode(DialougeText.root);
             setLineIndex(0);
         }

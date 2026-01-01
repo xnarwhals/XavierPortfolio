@@ -91,6 +91,12 @@
   box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
 }
 
+.nav-bar__link--disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
 .nav-bar__social {
   display: inline-flex;
   align-items: center;

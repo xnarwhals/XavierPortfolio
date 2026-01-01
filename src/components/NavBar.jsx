@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
+import { useQuestProgress } from '@/context/QuestProgressContext'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faBars,
@@ -35,6 +36,7 @@ const iconMap = {
 }
 
 function NavBar() {
+  const { allCompleted } = useQuestProgress()
   const location = useLocation()
   const [isOpen, setIsOpen] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
@@ -140,9 +142,17 @@ function NavBar() {
         <NavLink
           to="/secret"
           className={({ isActive }) =>
-            `nav-bar__link ${isActive ? 'is-active' : ''}`
+            `nav-bar__link ${isActive ? 'is-active' : ''} ${
+              allCompleted ? '' : 'nav-bar__link--disabled'
+            }`
           }
-          onClick={closeMenu}
+          onClick={(event) => {
+            if (!allCompleted) {
+              event.preventDefault()
+              return
+            }
+            closeMenu()
+          }}
         >
           <FontAwesomeIcon icon={faEnvelope} />
           <span>Secret</span>

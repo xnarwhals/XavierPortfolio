@@ -27,6 +27,7 @@ const DialougeText = {
                         left: {
                             label: "Fun fact",
                             node: {
+                                id: 'leaf-fun-fact-left',
                                 lines: [
                                     "As much as I love to look at screens for hours a day, you might be surprised to know that I am very physically active.",
                                     "I am a casual walker, the most miles I’ve covered on foot in a day is 51. It’s amazing what being bored and having spare time can lead to.",
@@ -40,6 +41,7 @@ const DialougeText = {
                         right: {
                             label: "Describe a time you failed and what you learned",
                             node: {
+                                id: 'leaf-failure-left',
                                 lines: [
                                     "While building my first React website, I failed in the planning stage—not in defining features or content, but in accounting for mobile responsiveness.",
                                     "I designed primarily for desktop and treated mobile adaptation as an afterthought.",
@@ -65,27 +67,25 @@ const DialougeText = {
                     ],
                     choices: {
                         left: {
-                            label: "Fun fact",
+                            label: "Favorite Dessert",
                             node: {
+                                id: 'leaf-dessert-right',
                                 lines: [
-                                    "As much as I love to look at screens for hours a day, you might be surprised to know that I am very physically active.",
-                                    "I am a casual walker, the most miles I’ve covered on foot in a day is 51. It’s amazing what being bored and having spare time can lead to.",
-                                    "Someday I will break 100 miles!",
-                                    "Just kidding.",
-                                    "Unless…",
+                                    "This is a very important question",
+                                    "I like donuts",
                                 ],
                                 end: true,
                             },
                         },
                         right: {
-                            label: "Describe a time you failed and what you learned",
+                            label: "Tell me about a time you learned a new technology",
                             node: {
+                                id: 'leaf-learning-right',
                                 lines: [
-                                    "While building my first React website, I failed in the planning stage—not in defining features or content, but in accounting for mobile responsiveness.",
-                                    "I designed primarily for desktop and treated mobile adaptation as an afterthought.",
-                                    "This resulted in significant rework, requiring me to revisit and refactor multiple style files to ensure the site functioned and displayed correctly on smaller screens.",
-                                    "I learned the importance of establishing a clear blueprint before execution, especially adopting a mobile-first design approach.",
-                                    "Thoughtful upfront planning can prevent wasted effort later and lead to more scalable, user-centered design decisions.",
+                                    "Believe it or not, I wasn't always the pro front-end developer I am now.",
+                                    "When I was learning HTML and CSS, I was so confused yet determined to learn these foundations of web development.",  
+                                    "Before using any sort of Javascript framework, I made my first portfolio website with pure HTML and CSS so that when I eventually leveled up I actually understood what was going on behind the scenes.",
+                                    "Alongside constant practice, through CodePath and personal projects, I have reinforced concepts of web development in a way that is meaningful to me, helping me quickly pick up new frameworks or evolving technologies!",
                                 ],
                                 end: true,
                             },

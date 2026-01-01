@@ -113,6 +113,22 @@
   color: #e6e55a;
 }
 
+// quest
+.quest-container {
+  z-index: 10;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(320px, 55vw, 720px);
+  height: clamp(320px, 50vh, 720px);
+  max-width: calc(100vw - 2rem);
+  max-height: calc(100vh - 2rem);
+  padding: clamp(1rem, 2vw, 1.5rem);
+  display: flex;
+  justify-content: center;
+}
+
 @media (max-width: 900px) {
   .home-menu {
     text-align: center;
