@@ -5,6 +5,7 @@
   border: 1px solid rgba(255, 215, 0, 0.35);
   box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
   cursor: pointer;
+  transition: border-color 0.2s ease;
 }
 
 .achievement-card:hover {
@@ -54,10 +55,38 @@
   display: block;
 }
 
+.achievement-media svg {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 40%;
+  height: 40%;
+  color: #f4e9cf;
+  z-index: 1;
+  transition: color 0.2s ease;
+}
+
 .vertical-line {
   width: 14px;
   flex: 0 0 14px;
   background: #B59410;
+  transition: background-color 0.2s ease;
+}
+
+.achievement-card.is-complete {
+  border-color: rgba(121, 32, 32, 0.55);
+}
+
+.achievement-card.is-complete .achievement-media svg {
+  color: #b21f1f;
+}
+
+.achievement-card.is-complete .a-icon {
+  filter: sepia(1) saturate(6) hue-rotate(340deg);
+}
+
+.achievement-card.is-complete .vertical-line {
+  background: #6b1d1d;
 }
 
 @font-face {

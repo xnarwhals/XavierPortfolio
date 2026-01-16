@@ -1,11 +1,16 @@
 import './index.scss'
+import { ArrowBigUpDash, ShoppingCart, Bot, School, GraduationCap, Trophy } from 'lucide-react';
 
-function AchievementCard( { achievement } ) {
+const ICONS = { ArrowBigUpDash, ShoppingCart, Bot, School, GraduationCap, Trophy };
 
+function AchievementCard( { achievement, onClick, isComplete } ) {
+    const Icon = ICONS[achievement.lucidIcon] || null;
+    
     return (
-        <div className="achievement-card">
+        <div className={`achievement-card${isComplete ? ' is-complete' : ''}`} onClick={onClick}>
             <div className="achievement-media">
                 <img className="a-icon" src={achievement.iconImg} alt={`${achievement.title} icon`} />
+                {Icon ? <Icon /> : null}
             </div>
             <div className="achievement-info">
                 <h3 className="achievement-title">{achievement.title}</h3>

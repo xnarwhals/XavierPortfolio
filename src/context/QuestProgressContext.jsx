@@ -1,8 +1,9 @@
-import { createContext, useContext, useEffect, useMemo, useState } from 'react'
+import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react'
 import QuestData from '@/data/QuestData'
 
 // This is the key we use in the browser's localStorage.
 const STORAGE_KEY = 'questProgress'
+const ABOUT_DIALOGUE_KEY = 'aboutDialogueLeafs'
 
 // React Context lets any component read/update quest progress
 // without passing props down through many layers.
@@ -30,6 +31,8 @@ export function QuestProgressProvider({ children }) {
       return []
     }
   })
+  const [notifications, setNotifications] = useState([])
+  const prevCompletedRef = useRef(completedQuestIds)
 
   // Whenever `completedQuestIds` changes, persist it to localStorage.
   useEffect(() => {
@@ -51,9 +54,30 @@ export function QuestProgressProvider({ children }) {
   const completedCount = completedQuestIds.length
   const allCompleted = completedCount >= totalCount && totalCount > 0
 
+  const pushNotification = useCallback((message) => {
+    const id = `${Date.now()}-${Math.random().toString(16).slice(2)}`
+    const payload = { id, message }
+    setNotifications((prev) => [...prev, payload])
+    setTimeout(() => {
+      setNotifications((prev) => prev.filter((item) => item.id !== id))
+    }, 5000)
+  }, [])
+
   // `value` is what consumers of this context receive.
   // useMemo prevents unnecessary re-renders in consumers when the value
   // would otherwise be a new object every render.
+  useEffect(() => {
+    const prev = prevCompletedRef.current
+    const newlyCompleted = completedQuestIds.filter((id) => !prev.includes(id))
+    if (newlyCompleted.length) {
+      newlyCompleted.forEach((id) => {
+        const quest = QuestData.find((item) => item.id === id)
+        pushNotification(`${quest?.title || 'Quest'} completed`)
+      })
+    }
+    prevCompletedRef.current = completedQuestIds
+  }, [completedQuestIds, pushNotification])
+
   const value = useMemo(
     () => ({
       completedQuestIds,
@@ -67,10 +91,20 @@ export function QuestProgressProvider({ children }) {
           prev.includes(id) ? prev : [...prev, id]
         ),
 
+      notifications,
+
       // Clear all progress.
-      resetQuests: () => setCompletedQuestIds([]),
+      resetQuests: () => {
+        setCompletedQuestIds([])
+        try {
+          if (typeof window === 'undefined' || !window.localStorage) return
+          window.localStorage.removeItem(ABOUT_DIALOGUE_KEY)
+        } catch (error) {
+          // Ignore storage errors.
+        }
+      },
     }),
-    [completedQuestIds, completedCount, totalCount, allCompleted]
+    [completedQuestIds, completedCount, totalCount, allCompleted, notifications]
   )
 
   return (

@@ -46,9 +46,23 @@ const cartridgeData = [
         gameGist: "2024 VR Puzzle Escape Room",
         experience: "First 3D Project, Baked Lighting, Use of Static Data, and Understanding of Unity XR Interaction Framework",
         itchLink: "https://gameheads.itch.io/apartment-510",
-        platforms: "Oculus Quest, Oculus Rift, HTC Vive"
-        
-
+        platforms: "Oculus Quest, Oculus Rift, HTC Vive"   
+    },
+    {
+        id: "Spree",
+        image: '/Imgs/Games/Game_Spree.png',
+        trailerUrl: "https://www.youtube.com/embed/4hrXlGriq44?si=FrArLTYsXC_pQLk8",
+        backImg: '/Imgs/Games/SpreeBack.png',
+        frontImg: '/Imgs/Games/Spree.png',
+        colors: {
+            mainColor: "#FFD166",
+            complementaryColor: "#06D6A0",
+            textColor: "#EF476F"
+        },
+        gameGist: "2025 ALT CTRL Co-op Racing",
+        experience: "Advanced C# Scripting, Scriptable Object based item system, and CPU racers",
+        itchLink: "https://gameheads.itch.io/spree",
+        platforms: "Windows, Mac, Controller Support, Shopping Cart"
     }
 
 ]

@@ -12,17 +12,15 @@
     margin: 0 auto;
 }
 
-.screen {
+.home-screen {
     position: absolute;
     background-color: black;
     color: limegreen;
     font-family: 'Pixel', sans-serif;
-    font-size: clamp(0.6rem, 2vw, 0.9rem);
     word-spacing: -0.5rem;
     text-align: center;
     border-radius: 9px;
 
-    /* Positioning relative to GameBoy image (adjust % to fit your image) */
     top: 18%;
     left: 28%;
     width: 44%;
@@ -125,12 +123,16 @@
 }
 
 @media (max-width: 720px) {
-    .screen {
-        font-size: clamp(0.5rem, 2vw, 0.8rem);
-        
+    .home-screen {
+        font-size: clamp(0.35rem, 1.8vw, 0.5rem);
+
         h3 {
-            font-size: clamp(0.3rem, 3vw, 0.5rem);
-        } 
+            font-size: clamp(0.45rem, 2.2vw, 0.6rem);
+        }
+
+        p {
+            font-size: clamp(0.35rem, 1.8vw, 0.5rem);
+        }
     }
 }
 

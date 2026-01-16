@@ -21,7 +21,6 @@ function App() {
           <Route path="quick-portfolio" element={<QuickPortfolio />} />
           <Route path="secret" element={<Secret />} />
           <Route path="achievements" element={<Achievements />} />
-          <Route path="achievments" element={<Achievements />} />
         </Route>
       </Routes>
     </>

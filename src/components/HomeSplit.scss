@@ -92,7 +92,36 @@
 }
 
 @media (max-width: 900px) {
+  .home-split {
+    height: auto;
+    min-height: 0;
+  }
+
+  .home-split__panel,
+  .home-split__divider,
+  .home-split__vignette {
+    display: none;
+  }
+
   .home-split__mobile {
+    position: relative;
     display: block;
+  }
+
+  .home-split__mobile-pane {
+    height: auto;
+    position: relative;
+  }
+
+  .home-split__mobile-pane--right {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .home-split__mobile-pane--left {
+    position: relative;
+    z-index: 1;
+    background: transparent;
   }
 }

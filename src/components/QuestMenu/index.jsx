@@ -13,6 +13,13 @@ const QuestMenu = ({ onClose }) => {
             <div className="quest-menu__header">
                 <h2>Quest Log</h2>
                 <button
+                    className="dev-quest-reset"
+                    type="button"
+                    onClick={useQuestProgress().resetQuests}
+                >
+                    Reset
+                </button>
+                <button
                     className="quest-menu__close"
                     type="button"
                     aria-label="Close quest menu"

@@ -51,30 +51,42 @@ const AchievementsData  = {
             iconImg: '/Imgs/Achievements/IconBG.svg', 
             title: 'Pushed to Main',
             description: 'Design and push 10 websites to Github.',
+            lucidIcon: 'ArrowBigUpDash'
         },
         {
             id: 2, 
             iconImg: '/Imgs/Achievements/IconBG.svg', 
             title: 'Experimental',
             description: 'Develop your first VR and ALT CTRL Game.',
+            lucidIcon: 'ShoppingCart'
         },
         {
             id: 3, 
             iconImg: '/Imgs/Achievements/IconBG.svg', 
             title: 'Veteran Rookie',
             description: 'Land your first internship at a major gaming studio.',
+            lucidIcon: 'Bot'
         },
         {
             id: 4,
             iconImg: '/Imgs/Achievements/IconBG.svg',
             title: 'Hey! Listen!',
-            description: 'Teach game development to high school students'
+            description: 'Teach game development to high school students',
+            lucidIcon: 'School'
         },
         {
             id: 5,
             iconImg: '/Imgs/Achievements/IconBG.svg',
             title: 'Flex Queue Pro',
-            description: 'Declare a double major in CS and Cinema'
+            description: 'Declare a double major in CS and Cinema',
+            lucidIcon: 'GraduationCap'
+        },
+        {
+            id: 6, 
+            iconImg: '/Imgs/Achievements/IconBG.svg', 
+            title: 'You Win!',
+            description: 'Click me to complete one of your quests',
+            lucidIcon: 'Trophy'
         }
     ]
 }

@@ -1,10 +1,12 @@
 import "./index.scss"
 import { useState } from "react"
+import { useQuestProgress } from "@/context/QuestProgressContext";
 
 
 function HomeGameBoy() {
     const [inputs, setInputs] = useState([]);
     const [isKonamiUnlocked, setIsKonamiUnlocked] = useState(false);
+    const { completeQuest } = useQuestProgress()
 
     const KONAMI_CODE = ["Up", "Up", "Down", "Down", "Left", "Right", "Left", "Right", "B", "A", "Start"];
 
@@ -15,6 +17,7 @@ function HomeGameBoy() {
         setInputs(newInputs);
     
         if (newInputs.slice(-KONAMI_CODE.length).join(",") === KONAMI_CODE.join(",")) {
+            completeQuest(2); // Mark the quest as complete
             setIsKonamiUnlocked(true); // Unlock the Konami feature immediately
         }
     }
@@ -26,7 +29,7 @@ function HomeGameBoy() {
 
   return (
     <div className="home-gameboy">
-        <div className="screen">
+        <div className="home-screen">
             {isKonamiUnlocked ? (
                 <p>🎉 Konami Code Unlocked! 🎉</p> // This triggers the locked secret nav bar icon to becoome clickable
             ) : (

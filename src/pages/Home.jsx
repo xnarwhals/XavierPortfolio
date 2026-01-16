@@ -3,6 +3,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import HomeSplit from '@/components/HomeSplit'
 import QuestMenu from '@/components/QuestMenu'
+import HomeGameBoy from '@/components/HomeGameBoy'
 
 import Balatro from '@/components/ReactBits/Balatro'
 import TextType from '@/components/ReactBits/TextType'
@@ -192,6 +193,13 @@ function Home() {
           balatroView
         }
       />
+      {/* Home GameBoy edit style */}
+      <div className="home-gameboy-container">
+        <h1 className='home-gameboy-text'>Props to you for scrolling down</h1>
+        <div className="home-gameboy-wrapper">
+          <HomeGameBoy />
+        </div>
+      </div>
     </>
   )
 }

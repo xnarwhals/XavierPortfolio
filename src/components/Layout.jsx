@@ -1,6 +1,7 @@
 import { Outlet } from 'react-router-dom'
 import NavBar from './NavBar'
 import Footer from './Footer'
+import Notification from './Notification'
 import { QuestProgressProvider } from '@/context/QuestProgressContext'
 
 function Layout() {
@@ -8,6 +9,7 @@ function Layout() {
     <QuestProgressProvider>
       <div className="app-shell">
         <NavBar />
+        <Notification />
         <main className="app-shell__content">
           <Outlet />
         </main>

@@ -34,11 +34,11 @@ function Portfolio() {
           <Gameboy />
         </div>
       }
-      footer={
-        <p className="footer-note">
-          Pixel Overworld goes here!
-        </p>
-      }
+      // footer={
+      //   <p className="footer-note">
+      //     Pixel Overworld goes here!
+      //   </p>
+      // }
     >
     </PageLayout>
   )

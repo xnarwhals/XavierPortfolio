@@ -1,4 +1,5 @@
 import './Achievements.scss'
+import { useState } from 'react'
 import PageLayout from '../components/PageLayout'
 import AchievementsData from '../data/AchievementsData'
 import CertificateCard from '../components/CertificateCard'
@@ -6,9 +7,13 @@ import AchievementCard from '../components/AchievementCard'
 
 import AnimatedContent from '../components/ReactBits/AnimatedContent'
 import Header from '../components/Header'
+import { useQuestProgress } from "@/context/QuestProgressContext";
 
 
 function Achievements() {
+  const { completeQuest } = useQuestProgress()
+  const [lastAchievementClicked, setLastAchievementClicked] = useState(false)
+  
   return (
     <PageLayout
       kicker="Xavier's Certificates"
@@ -18,8 +23,20 @@ function Achievements() {
         <div className='achievement-feature'>
           <Header title="Achievements" />
           <div className="achievement-container">
-            {AchievementsData.achievements.map((achievement) => (
-              <AchievementCard key={achievement.id} achievement={achievement} />
+            {AchievementsData.achievements.map((achievement, index, list) => (
+              <AchievementCard
+                key={achievement.id}
+                achievement={achievement}
+                onClick={
+                  index === list.length - 1
+                    ? () => {
+                        setLastAchievementClicked(true)
+                        completeQuest(3)
+                      }
+                    : undefined
+                }
+                isComplete={index === list.length - 1 && lastAchievementClicked}
+              />
             ))}
           </div>
         </div>
