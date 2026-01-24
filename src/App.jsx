@@ -8,7 +8,7 @@ import QuickPortfolio from './pages/QuickPortfolio'
 import Secret from './pages/Secret'
 import './App.scss'
 
-// <Route path="gameboy" element={<MobileGameboy />} />
+
 
 function App() {
   return (

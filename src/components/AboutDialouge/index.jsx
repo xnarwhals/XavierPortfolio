@@ -3,6 +3,7 @@ import { useState, useEffect, useMemo } from 'react';
 import DialougeText from '@/data/DialougeText'; // binary tree structure for dialouge options
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import CustomToggle from '../ReactUI/CustomToggle';
 import TextType from '../ReactBits/TextType'; // all text in text-box displayed with this component (not choices/buttons)
 import { useQuestProgress } from '@/context/QuestProgressContext';
 
@@ -84,6 +85,7 @@ function AboutDialouge() {
     const [forceComplete, setForceComplete] = useState(false);
     const [forceCompleteToken, setForceCompleteToken] = useState(0);
     const [choicesArmed, setChoicesArmed] = useState(false);
+    const [skipIntroEnabled, setSkipIntroEnabled] = useState(false);
     const { completeQuest } = useQuestProgress();
 
     const leafIds = useMemo(() => collectLeafIds(DialougeText.root), []);
@@ -101,7 +103,11 @@ function AboutDialouge() {
     const isEnd = currentNode.end || false;
     const hasChoices = Boolean(currentNode.choices) && !isEnd;
     const atEndOfLines = lineIndex >= currentNode.lines.length - 1;
-    const showChoices = hasChoices && atEndOfLines && isTypingComplete && choicesArmed;
+    const isAtRoot = currentNode === DialougeText.root;
+    const showChoices = (skipIntroEnabled && isAtRoot) || (
+        hasChoices && atEndOfLines && isTypingComplete && choicesArmed
+    );
+    const showSkipIntro = true;
 
     useEffect(() => {
         setIsTypingComplete(false);
@@ -142,6 +148,14 @@ function AboutDialouge() {
             if (currentNode.id && !visitedLeafIds.includes(currentNode.id)) {
                 setVisitedLeafIds((prev) => [...prev, currentNode.id]);
             }
+            if (skipIntroEnabled) {
+                setCurrentNode(DialougeText.root);
+                setLineIndex(0);
+                setIsTypingComplete(true);
+                setForceComplete(false);
+                setChoicesArmed(true);
+                return;
+            }
             setCurrentNode(DialougeText.root);
             setLineIndex(0);
         }
@@ -154,6 +168,22 @@ function AboutDialouge() {
         setCurrentNode(next);
         setLineIndex(0);
     }
+    
+    const handleSkipIntro = (nextValue) => {
+        const nextSkipIntro =
+            typeof nextValue === 'boolean' ? nextValue : !skipIntroEnabled;
+        setSkipIntroEnabled(nextSkipIntro);
+        if (!nextSkipIntro) {
+            return;
+        }
+        if (!isAtRoot) {
+            setCurrentNode(DialougeText.root);
+        }
+        setLineIndex(0);
+        setIsTypingComplete(true);
+        setForceComplete(false);
+        setChoicesArmed(true);
+    };
 
     return (
         <div className='dialouge-container'>
@@ -184,6 +214,16 @@ function AboutDialouge() {
                         </button>
                     </div>
                 }
+                {showSkipIntro && (
+                    <div
+                        className={`skip-intro-container${skipIntroEnabled ? ' is-active' : ''}`}
+                    >
+                        <span className="skip-intro-label" onClick={handleSkipIntro}>
+                            Skip Intro
+                        </span>
+                        <CustomToggle checked={skipIntroEnabled} onChange={handleSkipIntro} />
+                    </div>
+                )}
                 <button className='next-btn' onClick={handleNext}> <FontAwesomeIcon icon={faArrowRight} /> </button>
             </div>
         </div>

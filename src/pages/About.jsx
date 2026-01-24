@@ -40,7 +40,7 @@ function About() {
                 </button>
               </li>
             ))}
-          </ul>      
+          </ul>    
         </div>
       )}
       children={(<AboutDialouge />)}

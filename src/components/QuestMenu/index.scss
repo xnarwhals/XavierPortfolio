@@ -223,4 +223,11 @@
     .quest-menu > * {
         transform: none;
     }
+
+    .quest-card__status {
+        top: auto;
+        right: auto;
+        bottom: 0.6rem;
+        left: 0.8rem;
+    }
 }

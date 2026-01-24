@@ -1,3 +1,6 @@
+@import 'animate.css';
+@import 'loaders.css/src/animations/pacman.scss';
+
 .app-shell {
   min-height: 100vh;
   color: #f5e9c5;
@@ -23,9 +26,30 @@ p {
   color: #e5d9a8;
 }
 
+.loader-hidden {
+  display: none;
+}
+
+.loader-active {
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  width: 50px;
+  height: 50px;
+  animation: fadeOut 1s 1s;
+  animation-fill-mode: forwards;
+}
+
+
+
 @media (max-width: 900px) {
   .app-shell {
     width: 100vw;
     padding: 0;
   }
 }
+

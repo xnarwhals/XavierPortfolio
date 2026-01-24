@@ -83,6 +83,14 @@ function QuickPortfolio() {
                   <div className="game-text">
                       <div className="project">
                           <h3>
+                              Spree
+                              <h4>2025 Alt Crtl Co-op Racer</h4>
+                          </h3>
+                          <p>Advanced C# Scripting, Scriptable Object based item system, and CPU racers</p>
+                          <img src='/Imgs/Games/Game_Spree.png' alt="Spree" />
+                      </div>
+                      <div className="project">
+                          <h3>
                               Apartment 510
                               <h4>2024 VR Puzzle Escape Room</h4>
                           </h3>

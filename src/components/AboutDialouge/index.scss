@@ -3,7 +3,7 @@
     width: 100%;
     display: flex;
     gap: 1rem;
-    min-height: 200px;
+    min-height: 250px;
     font-weight: 550;
 }
 
@@ -65,6 +65,7 @@
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    position: relative;
 
     padding: 1rem 1.5rem;
     text-align: left;
@@ -95,6 +96,36 @@
     box-shadow:
         0 4px 12px rgba(0, 0, 0, 0.3),
         inset 0 0 0 1px rgba(255, 215, 0, 0.1);
+}
+
+// bottom left corner
+.skip-intro-container {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 8px;
+    background: rgba(255, 215, 0, 0.12);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    color: #fff5c0;
+    cursor: default;
+    transition: background 0.2s, border-color 0.2s;
+    z-index: 6;
+}
+
+.skip-intro-label {
+    cursor: pointer;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.skip-intro-container.is-active {
+    background: rgba(255, 215, 0, 0.24);
+    border-color: rgba(255, 215, 0, 0.5);
 }
 
 .choices-container {
@@ -136,7 +167,6 @@
 
     .dialouge-textbox {
         width: 100%;
+        min-height: 300px;
     }
 }
-
-
