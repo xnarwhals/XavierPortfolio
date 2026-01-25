@@ -12,13 +12,13 @@ const QuestMenu = ({ onClose }) => {
         <div className='quest-menu'>
             <div className="quest-menu__header">
                 <h2>Quest Log</h2>
-                <button
+                {/* <button
                     className="dev-quest-reset"
                     type="button"
                     onClick={useQuestProgress().resetQuests}
                 >
                     Reset
-                </button>
+                </button> */}
                 <button
                     className="quest-menu__close"
                     type="button"

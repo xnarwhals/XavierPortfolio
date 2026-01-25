@@ -9,6 +9,7 @@ import {
   faHome,
   faSuitcase,
   faUser,
+  faClipboardQuestion
 } from '@fortawesome/free-solid-svg-icons'
 import {
   faGithub,
@@ -138,6 +139,16 @@ function NavBar() {
         >
           <FontAwesomeIcon icon={faGamepad} />
           <span>Achievements</span>
+        </NavLink>
+        <NavLink
+          to="/services"
+          className={({ isActive }) =>
+            `nav-bar__link ${isActive ? 'is-active' : ''}`
+          }
+          onClick={closeMenu}
+        >
+          <FontAwesomeIcon icon={faClipboardQuestion} />
+          <span>Services</span>
         </NavLink>
         <NavLink
           to="/secret"

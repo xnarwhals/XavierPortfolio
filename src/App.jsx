@@ -6,6 +6,7 @@ import Home from './pages/Home'
 import Portfolio from './pages/Portfolio'
 import QuickPortfolio from './pages/QuickPortfolio'
 import Secret from './pages/Secret'
+import Services from './pages/Services'
 import './App.scss'
 
 
@@ -21,6 +22,7 @@ function App() {
           <Route path="quick-portfolio" element={<QuickPortfolio />} />
           <Route path="secret" element={<Secret />} />
           <Route path="achievements" element={<Achievements />} />
+          <Route path="services" element={<Services />} />
         </Route>
       </Routes>
     </>

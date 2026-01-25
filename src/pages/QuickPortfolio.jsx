@@ -54,7 +54,7 @@ function QuickPortfolio() {
               <li>
                   <h2>Tools</h2>
                   <i class="devicon-visualstudio-plain" title="Visual Studio Code">
-                      <span>Visual Studio Code</span>
+                      <span>VS Code</span>
                   </i>
                   <i class="devicon-photoshop-plain" title="Photoshop">
                       <span>Photoshop</span>
