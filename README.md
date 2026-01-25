@@ -1,16 +1,36 @@
-# React + Vite
+# Xavier Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio site built to showcase projects, skills, and an interest form for new client work.
 
-Currently, two official plugins are available:
+## Tech Stack
+- React 18 + React Router
+- Vite 7
+- Sass + Tailwind CSS (via `@tailwindcss/vite`)
+- Three.js + React Three Fiber/Drei + postprocessing
+- GSAP, Motion
+- Font Awesome + Devicon
+- React DnD
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+- Multi-page layout with routed sections (About, Portfolio, Services, etc.)
+- 3D scene and interactive UI elements
+- Interest form routed to Formspree
+- GitHub Pages deployment via Actions
 
-## React Compiler
+## Local Development
+```bash
+npm install
+npm run dev
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Build
+```bash
+npm run build
+npm run preview
+```
 
-## Expanding the ESLint configuration
+## Deployment
+This repo deploys to GitHub Pages using a GitHub Actions workflow that builds the Vite app and publishes the `dist` folder.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Notes
+- Assets live under `public/`
