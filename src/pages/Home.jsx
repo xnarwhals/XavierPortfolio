@@ -95,7 +95,9 @@ function Home() {
             setHasPressedEnter(false)
           } else {
             setHasPressedEnter(false)
-            navigate(target.to)
+            const isMobile = window.matchMedia('(max-width: 768px)').matches
+            const destination = isMobile ? '/quick-portfolio' : target.to
+            navigate(destination)
           }
         }
       }
@@ -178,7 +180,9 @@ function Home() {
                     openQuestMenu()
                     return
                   }
-                  navigate(item.to)
+                  const isMobile = window.matchMedia('(max-width: 768px)').matches
+                  const destination = isMobile ? '/quick-portfolio' : item.to
+                  navigate(destination)
                 }}
                 showConfirmation={hasPressedEnter && index === activeIndex}
               >
