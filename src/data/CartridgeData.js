@@ -1,11 +1,13 @@
 
+const baseUrl = import.meta.env.BASE_URL
+
 const cartridgeData = [
     {
         id: "Selva",
-        image: '/Imgs/Games/Game_Selva.png',
+        image: `${baseUrl}Imgs/Games/Game_Selva.png`,
         trailerUrl: "https://www.youtube.com/embed/h2abkQpf6_M?si=xefEiDqt4xxHcaRl", 
-        backImg: '/Imgs/Games/SelvaBack.png',
-        frontImg: '/Imgs/Games/Selva.png',
+        backImg: `${baseUrl}Imgs/Games/SelvaBack.png`,
+        frontImg: `${baseUrl}Imgs/Games/Selva.png`,
         colors: {
             mainColor: "#C1E899",
             complementaryColor: "#9A6735",
@@ -18,10 +20,10 @@ const cartridgeData = [
     },
     {
         id: "Colorezz",
-        image: '/Imgs/Games/Game_Colorezz.png',
+        image: `${baseUrl}Imgs/Games/Game_Colorezz.png`,
         trailerUrl: "https://www.youtube.com/embed/ULZr5-ryP3c?si=G7HqJ5HJ6TUoYi-v",
-        backImg: '/Imgs/Games/ColorezzBack.png',
-        frontImg: '/Imgs/Games/Colorezz.png',
+        backImg: `${baseUrl}Imgs/Games/ColorezzBack.png`,
+        frontImg: `${baseUrl}Imgs/Games/Colorezz.png`,
         colors: {
             mainColor: "#219ebc",
             complementaryColor: "#fb8500",
@@ -34,10 +36,10 @@ const cartridgeData = [
     },
     {
         id: "Apt510",
-        image: '/Imgs/Games/Game_Apt510.png',
+        image: `${baseUrl}Imgs/Games/Game_Apt510.png`,
         trailerUrl: "https://www.youtube.com/embed/jrzt0Dyz0MU?si=v5-pfKBY-LGzJQE3",
-        backImg: '/Imgs/Games/VPVRBack.png',
-        frontImg: '/Imgs/Games/VPVR.png',
+        backImg: `${baseUrl}Imgs/Games/VPVRBack.png`,
+        frontImg: `${baseUrl}Imgs/Games/VPVR.png`,
         colors: {
             mainColor: "#7E5CAD",
             complementaryColor: "#EB3678",
@@ -50,10 +52,10 @@ const cartridgeData = [
     },
     {
         id: "Spree",
-        image: '/Imgs/Games/Game_Spree.png',
+        image: `${baseUrl}Imgs/Games/Game_Spree.png`,
         trailerUrl: "https://www.youtube.com/embed/4hrXlGriq44?si=FrArLTYsXC_pQLk8",
-        backImg: '/Imgs/Games/SpreeBack.png',
-        frontImg: '/Imgs/Games/Spree.png',
+        backImg: `${baseUrl}Imgs/Games/SpreeBack.png`,
+        frontImg: `${baseUrl}Imgs/Games/Spree.png`,
         colors: {
             mainColor: "#FFD166",
             complementaryColor: "#06D6A0",

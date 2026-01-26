@@ -1,5 +1,7 @@
 
 
+const baseUrl = import.meta.env.BASE_URL
+
 const ProjectsData = {
     codepath: [
         {
@@ -45,19 +47,19 @@ const ProjectsData = {
             id: 1,
             name: 'First Website',
             github: 'https://github.com/xnarwhals/Xavier-Website',
-            thumbnail: '/Imgs/Thumbnails/html.png'
+            thumbnail: `${baseUrl}Imgs/Thumbnails/html.png`
         },
         {
             id: 2,
             name: 'React Portfolio V1',
             github: 'https://github.com/xnarwhals/XavierReact',
-            thumbnail: '/Imgs/Thumbnails/react.png'
+            thumbnail: `${baseUrl}Imgs/Thumbnails/react.png`
         },
         {
             id: 3,
             name: 'Portfolio V2!',
             github: 'https://github.com/xnarwhals/XavierPortfolio',
-            thumbnail: '/Imgs/Thumbnails/react2.png'
+            thumbnail: `${baseUrl}Imgs/Thumbnails/react2.png`
         }
     ],
 
@@ -66,13 +68,13 @@ const ProjectsData = {
             id: 1,
             name: 'AI Debate App',
             github: 'https://github.com/xnarwhals/DebateApp',
-            thumbnail: '/Imgs/Thumbnails/debate.png'
+            thumbnail: `${baseUrl}Imgs/Thumbnails/debate.png`
         },
         {
             id: 2,
             name: 'AI Fake News Detector',
             github: 'https://github.com/xnarwhals/Fake-News-ECS-170',
-            thumbnail: '/Imgs/Thumbnails/fakenews.png'
+            thumbnail: `${baseUrl}Imgs/Thumbnails/fakenews.png`
         }
     ]
 

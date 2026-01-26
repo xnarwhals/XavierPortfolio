@@ -1,3 +1,5 @@
+const baseUrl = import.meta.env.BASE_URL
+
 const TIMELINE = [
   {
     period: 'June 15, 2022',
@@ -11,15 +13,15 @@ const TIMELINE = [
     endDate: 'Present',
     images: [
       {
-        src: '/Imgs/Timeline/gh_2.png',
+        src: `${baseUrl}Imgs/Timeline/gh_2.png`,
         alt: 'Gameheads Image 2',
       },      
       {
-        src: '/Imgs/Timeline/gh_3.png',
+        src: `${baseUrl}Imgs/Timeline/gh_3.png`,
         alt: 'Gameheads Image 3',
       },      
       {
-        src: '/Imgs/Timeline/gh_1.png',
+        src: `${baseUrl}Imgs/Timeline/gh_1.png`,
         alt: 'Gameheads Image 1',
       },
     ],
@@ -47,15 +49,15 @@ const TIMELINE = [
     endDate: 'Present',
     images: [
       {
-        src: '/Imgs/Timeline/hsf_2.png',
+        src: `${baseUrl}Imgs/Timeline/hsf_2.png`,
         alt: 'HSF Image 2',
       },
       {
-        src: '/Imgs/Timeline/hsf_3.png',
+        src: `${baseUrl}Imgs/Timeline/hsf_3.png`,
         alt: 'HSF Image 3',
       },      
       {
-        src: '/Imgs/Timeline/hsf_1.png',
+        src: `${baseUrl}Imgs/Timeline/hsf_1.png`,
         alt: 'HSF Image 1',
       },
     ]
@@ -73,15 +75,15 @@ const TIMELINE = [
     endDate: 'Present',
     images: [
       {
-        src: '/Imgs/Timeline/alas_2.png',
+        src: `${baseUrl}Imgs/Timeline/alas_2.png`,
         alt: 'ALAS Image 2',
       },  
       {
-        src: '/Imgs/Timeline/alas_3.png',
+        src: `${baseUrl}Imgs/Timeline/alas_3.png`,
         alt: 'ALAS Image 3',
       },          
       {
-        src: '/Imgs/Timeline/alas_1.png',
+        src: `${baseUrl}Imgs/Timeline/alas_1.png`,
         alt: 'ALAS Image 1',
       }, 
     ],

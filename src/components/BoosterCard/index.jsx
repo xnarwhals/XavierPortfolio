@@ -7,10 +7,11 @@ import { Tv, Fish, Donut, Code, Apple, Droplet, Crosshair, Palette,
 
 // CardData.cardPacks = { Selva: [...], VPVR: [...], Colorezz: [...] }
 function BoosterCard({ cardPack, cardIndex = 0 }) {
+    const baseUrl = import.meta.env.BASE_URL
     const cardBackgrounds = {
-        Selva: 'public/Imgs/Cards/CardSelva.png',
-        VPVR: 'public/Imgs/Cards/CardVPVR.png',
-        Colorezz: 'public/Imgs/Cards/CardColorezz.png',
+        Selva: `${baseUrl}Imgs/Cards/CardSelva.png`,
+        VPVR: `${baseUrl}Imgs/Cards/CardVPVR.png`,
+        Colorezz: `${baseUrl}Imgs/Cards/CardColorezz.png`,
     }
 
     const iconMap = {

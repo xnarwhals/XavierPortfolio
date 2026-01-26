@@ -79,6 +79,8 @@ function NamePlate({ name = 'Xavier' }) {
 }
 
 function AboutDialouge() {
+    const baseUrl = import.meta.env.BASE_URL
+
     const [currentNode, setCurrentNode] = useState(DialougeText.root);
     const [lineIndex, setLineIndex] = useState(0);
     const [isTypingComplete, setIsTypingComplete] = useState(false);
@@ -188,7 +190,7 @@ function AboutDialouge() {
     return (
         <div className='dialouge-container'>
             <div className='head-icon'>
-                <img src='/Imgs/Misc/Xavier.png'/>
+                <img src={`${baseUrl}Imgs/Misc/Xavier.png`} alt="Xavier" />
                 <NamePlate name="Xavier" />
             </div>
             <div className='dialouge-textbox'>

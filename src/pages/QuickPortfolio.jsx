@@ -6,6 +6,8 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import './QuickPortfolio.scss'
 
 function QuickPortfolio() {
+  const baseUrl = import.meta.env.BASE_URL
+
   return (
     <PageLayout
       kicker="No Time, No Problem"
@@ -87,7 +89,7 @@ function QuickPortfolio() {
                               <h4>2025 Alt Crtl Co-op Racer</h4>
                           </h3>
                           <p>Advanced C# Scripting, Scriptable Object based item system, and CPU racers</p>
-                          <img src='/Imgs/Games/Game_Spree.png' alt="Spree" />
+                          <img src={`${baseUrl}Imgs/Games/Game_Spree.png`} alt="Spree" />
                       </div>
                       <div className="project">
                           <h3>
@@ -96,7 +98,7 @@ function QuickPortfolio() {
                           </h3>
                           
                           <p>First 3D Project, Baked Lighting, Use of Static Data, and Understanding of Unity XR Interaction Framework</p>
-                          <img src='/Imgs/Games/Game_Apt510.png' alt="Apt510" />
+                          <img src={`${baseUrl}Imgs/Games/Game_Apt510.png`} alt="Apt510" />
                       </div>
                       <div className="project">
                           <h3>
@@ -104,7 +106,7 @@ function QuickPortfolio() {
                               <h4>2023 Fixed 2D First Person Shooter</h4>
                           </h3>
                           <p>Basic Shader Graph, Unity New Input System, Version Control, and Working with Other Programmers</p>
-                            <img src='/Imgs/Games/Game_Colorezz.png' alt="Apt510" />
+                            <img src={`${baseUrl}Imgs/Games/Game_Colorezz.png`} alt="Apt510" />
                       </div>
                       <div className="project">
                           <h3>
@@ -112,7 +114,7 @@ function QuickPortfolio() {
                               <h4>2022 Jungle Adventure 2D Platformer</h4>
                           </h3>
                           <p>Unity Engine Workflow, Dynamic Player Movement, Intro to C#, and Tilemaping</p>
-                            <img src='/Imgs/Games/Game_Selva.png' alt="Apt510" />
+                            <img src={`${baseUrl}Imgs/Games/Game_Selva.png`} alt="Apt510" />
                       </div>
                   </div>
               </li>
