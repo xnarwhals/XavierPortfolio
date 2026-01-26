@@ -1,8 +1,42 @@
 import './Services.scss'
 import PageLayout from '../components/PageLayout'
 import Header from '../components/Header'
+import { useState } from 'react'
+import { DotLottieReact } from '@lottiefiles/dotlottie-react'
 
 function Services() {
+    const [status, setStatus] = useState('idle')
+
+    const handleSubmit = async (event) => {
+        event.preventDefault()
+        if (status === 'sending') return
+        setStatus('sending')
+
+        const form = event.currentTarget
+        const data = new FormData(form)
+
+        try {
+            const response = await fetch('https://formspree.io/f/mwvopakv', {
+                method: 'POST',
+                body: data,
+                headers: { Accept: 'application/json' },
+            })
+
+            if (response.ok) {
+                setStatus('success')
+                form.reset()
+                return
+            }
+        } catch (error) {
+            // Fall through to error state below.
+        }
+
+        setStatus('error')
+    }
+
+    const dismissSuccess = () => setStatus('idle')
+
+
     return (
         <PageLayout
             kicker="A portfolio doesn't have to be boring!"
@@ -31,10 +65,10 @@ function Services() {
                 </div>
             }
             children={
+                <>
                 <form
                     className="services-form"
-                    action="https://formspree.io/f/mwvopakv"
-                    method="POST"
+                    onSubmit={handleSubmit}
                 >
                     <div className="services-form__field">
                         <label htmlFor="fullName">Full Name</label>
@@ -75,8 +109,27 @@ function Services() {
                         <textarea id="comments" name="comments" rows="4" />
                     </div>
                     <input className="services-form__bot" type="text" name="_gotcha" tabIndex="-1" autoComplete="off" />
-                    <button className="services-form__submit" type="submit">Send Interest</button>
+                    <button className="services-form__submit" type="submit" disabled={status === 'sending'}>
+                        {status === 'sending' ? 'Sending...' : 'Send Interest'}
+                    </button>
                 </form>
+                {status === 'success' && (
+                    <div className="services-form__success" role="status" onClick={dismissSuccess}>
+                        <div className="services-form__success-card" onClick={(event) => event.stopPropagation()}>
+                            <DotLottieReact
+                                src="https://lottie.host/167a57d3-d63a-4923-826a-67802b7f39a1/CLOU84GfrN.lottie"
+                                autoplay
+                                loop={true}
+                            />
+                            <p>Thanks! Your request was sent.</p>
+                            <button type="button" onClick={dismissSuccess}>Close</button>
+                        </div>
+                    </div>
+                )}
+                {status === 'error' && (
+                    <p className="services-form__error">Something went wrong. Please try again.</p>
+                )}
+                </>
             }
         />
     )

@@ -24,9 +24,12 @@
 
 .cartridge-slot {
     position: absolute;
-    justify-items: center;
+    display: grid;
+    place-items: center;
     text-align: center;
-    top: -25%;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -25%);
     width: 36%;
     height: 70%;
     border: 2px dashed #00ff9d; 
@@ -51,7 +54,8 @@
 }
 
 .empty-text {
-    margin-top: 2rem;
+    top: 10px;
+    position: absolute;
     font-family: 'Pixel';
 }
 

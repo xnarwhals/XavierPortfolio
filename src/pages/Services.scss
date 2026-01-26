@@ -126,6 +126,53 @@
   transform: translateY(0);
 }
 
+.services-form__error {
+  margin: 0.6rem 0 0;
+  color: #ffb36a;
+  font-size: 0.9rem;
+}
+
+.services-form__success {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: rgba(4, 4, 4, 0.78);
+  backdrop-filter: blur(4px);
+  z-index: 10;
+}
+
+.services-form__success-card {
+  width: min(360px, 90vw);
+  background: rgba(8, 8, 8, 0.95);
+  border: 1px solid rgba(255, 211, 106, 0.4);
+  border-radius: 1.2rem;
+  padding: 1.4rem 1.6rem;
+  display: grid;
+  gap: 0.9rem;
+  text-align: center;
+  color: #f7e9bf;
+  box-shadow: 0 24px 55px rgba(0, 0, 0, 0.55);
+}
+
+.services-form__success-card canvas,
+.services-form__success-card svg {
+  width: 100%;
+  height: auto;
+}
+
+.services-form__success-card button {
+  border: none;
+  border-radius: 999px;
+  padding: 0.6rem 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #1a1206;
+  background: linear-gradient(135deg, var(--gold), var(--gold-deep));
+  cursor: pointer;
+}
+
 // feature 
 
 .info-text-box {
