@@ -197,6 +197,7 @@ function Home() {
           balatroView
         }
       />
+
       {/* Home GameBoy edit style */}
       <div className="home-gameboy-container">
         <h1 className='home-gameboy-text'>Props to you for scrolling down</h1>

@@ -19,64 +19,64 @@ function QuickPortfolio() {
           <ul>
               <li>
                   <h2>Languages</h2>
-                  <i class="devicon-c-plain" title="C">
+                  <i className="devicon-c-plain" title="C">
                       <span>C</span>
                   </i>
-                  <i class="devicon-cplusplus-plain" title="C++">
+                  <i className="devicon-cplusplus-plain" title="C++">
                       <span>C++</span>
                   </i>
-                  <i class="devicon-csharp-plain" title="C#">
+                  <i className="devicon-csharp-plain" title="C#">
                       <span>C#</span>
                   </i>
-                  <i class="devicon-javascript-plain" title="JavaScript">
+                  <i className="devicon-javascript-plain" title="JavaScript">
                       <span>JavaScript</span>
                   </i>
-                  <i class="devicon-python-plain" title="Python">
+                  <i className="devicon-python-plain" title="Python">
                       <span>Python</span>
                   </i>
-                  <i class="devicon-html5-plain" title="HTML5">
+                  <i className="devicon-html5-plain" title="HTML5">
                       <span>HTML5</span>
                   </i>
-                  <i class="devicon-swift-plain  ift-plain" title="Swift">
+                  <i className="devicon-swift-plain  ift-plain" title="Swift">
                       <span>Swift</span>
                   </i>
               </li>
               <li>
                   <h2>Frameworks</h2>
-                  <i class="devicon-unity-plain" title="Unity">
+                  <i className="devicon-unity-plain" title="Unity">
                       <span>Unity</span>
                   </i>    
-                  <i class="devicon-react-original" title="React.js">
+                  <i className="devicon-react-original" title="React.js">
                       <span>React.js</span>
                   </i>
-                  <i class="devicon-unrealengine-original" title="Unreal">
+                  <i className="devicon-unrealengine-original" title="Unreal">
                       <span>Unreal</span>
                   </i>
               </li>
               <li>
                   <h2>Tools</h2>
-                  <i class="devicon-visualstudio-plain" title="Visual Studio Code">
+                  <i className="devicon-visualstudio-plain" title="Visual Studio Code">
                       <span>VS Code</span>
                   </i>
-                  <i class="devicon-photoshop-plain" title="Photoshop">
+                  <i className="devicon-photoshop-plain" title="Photoshop">
                       <span>Photoshop</span>
                   </i>
-                  <i class="devicon-illustrator-plain" title="Illustrator">
+                  <i className="devicon-illustrator-plain" title="Illustrator">
                       <span>Illustrator</span>
                   </i>
-                  <i class="devicon-premierepro-plain" title="Premier Pro">
+                  <i className="devicon-premierepro-plain" title="Premier Pro">
                       <span>Premier Pro</span>
                   </i>
               </li>
               <li>
                   <h2>Misc</h2>
-                  <i class="devicon-github-plain" title="Github">
+                  <i className="devicon-github-plain" title="Github">
                       <span>Github</span>
                   </i>
-                  <i class="devicon-sass-original" title="Sass">
+                  <i className="devicon-sass-original" title="Sass">
                       <span>Sass</span>
                   </i>
-                  <i class="devicon-json-plain" title="JSON">
+                  <i className="devicon-json-plain" title="JSON">
                       <span>JSON</span>
                   </i>
               </li>
