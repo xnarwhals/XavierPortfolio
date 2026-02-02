@@ -2,6 +2,8 @@
 @import 'loaders.css/loaders.min.css';
 
 .app-shell {
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
   color: #f5e9c5;
   width: 100vw;
@@ -10,6 +12,7 @@
 }
 
 .app-shell__content {
+  flex: 1;
   width: 100%;
   padding-top: 4.5rem;
 }

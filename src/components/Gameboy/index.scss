@@ -3,10 +3,16 @@
     justify-items: center;
     z-index: 0;
 
-    width: clamp(80%, 90vw, 400px);
+    width: 80%;
 
     aspect-ratio: 16 / 9; 
     margin: 0 auto;
+}
+
+@media (min-width: 1200px) {
+    .gameboy {
+        width: 55%;
+    }
 }
 
 // green line fix
