@@ -129,7 +129,7 @@
       "brand toggle"
       "links links"
       "social social";
-    padding: 0.9rem 1rem;
+    padding: 0.6rem 0.9rem;
   }
 
   .nav-bar__toggle {
@@ -170,6 +170,12 @@
 
   .nav-bar__toggle {
     grid-area: toggle;
+  }
+
+  .nav-bar__brand-mark,
+  .nav-bar__toggle {
+    width: 2.3rem;
+    height: 2.3rem;
   }
 
   .nav-bar__links {

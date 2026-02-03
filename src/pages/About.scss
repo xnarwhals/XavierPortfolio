@@ -148,7 +148,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  gap: clamp(0.75rem, 1vw, 1.25rem);
 }
 
 .about-timeline-details__count {
@@ -177,16 +177,17 @@
 
 .about-timeline-split {
   display: grid;
-  gap: 1rem;
+  gap: clamp(1rem, 1.25vw, 2rem);
   align-items: start;
-  grid-template-columns: 70% 30%;
+  grid-template-columns: minmax(0, 0.9fr) minmax(260px, 420px);
 }
 
 .stack-conatiner {
   width: 100%;
-  max-width: 300px;
-  height: 300px;
-
+  max-width: 100%;
+  aspect-ratio: 1 / 1;
+  height: auto;
+  justify-self: start;
 }
 
 .about-timeline-details__text {
@@ -195,7 +196,7 @@
   margin: 0;
   color: #e8d9a5;
   line-height: 1.75;
-  font-size: 1rem;
+  font-size: clamp(1rem, calc(0.9rem + 0.35vw), 1.25rem);
   font-family: 'Sora', 'Trebuchet MS', sans-serif;
   letter-spacing: 0.01em;
 }
