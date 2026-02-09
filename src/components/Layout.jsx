@@ -11,6 +11,7 @@ function Layout() {
   const location = useLocation()
   const [isLoading, setIsLoading] = useState(false)
 
+  // loader
   useEffect(() => {
     setIsLoading(true)
     const timeoutId = window.setTimeout(() => {
@@ -18,6 +19,11 @@ function Layout() {
     }, 600)
 
     return () => window.clearTimeout(timeoutId)
+  }, [location.pathname])
+
+  // Scroll to top on route change
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
   }, [location.pathname])
 
   return (
