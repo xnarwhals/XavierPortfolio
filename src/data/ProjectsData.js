@@ -3,6 +3,45 @@
 const baseUrl = import.meta.env.BASE_URL
 
 const ProjectsData = {
+    games: [
+        {
+            id: 1,
+            name: 'Metarrow',
+            github: 'https://xnarwhals.itch.io/metarrow',
+            thumbnail: `${baseUrl}Imgs/Thumbnails/metarrow.png`
+        },
+        {
+            id: 2,
+            name: 'Spree',
+            github: 'https://gameheads.itch.io/spree',
+            thumbnail: `${baseUrl}Imgs/Thumbnails/spree.png`
+        },
+        {
+            id: 3,
+            name: 'Apartment 510',
+            github: 'https://gameheads.itch.io/apartment-510',
+            thumbnail: `${baseUrl}Imgs/Games/VPVR.png`
+        },
+        {
+            id: 4,
+            name: 'Colorezz',
+            github: 'https://gameheads.itch.io/colorezz',
+            thumbnail: `${baseUrl}Imgs/Thumbnails/colorezz.png`
+        },
+        {
+            id: 5,
+            name: 'Selva',
+            github: 'https://gameheads.itch.io/selva',
+            thumbnail: `${baseUrl}Imgs/Thumbnails/selva.png`
+        },
+        {
+            id: 6,
+            name: 'PacPush',
+            github: 'https://gameheads.itch.io/pacpush',
+            thumbnail: `${baseUrl}Imgs/Thumbnails/pacpush.png`
+        }
+    ],
+
     codepath: [
         {
             id: 1,

@@ -123,6 +123,21 @@ function QuickPortfolio() {
       }
       children={
         <div className='project-preview-grid'>
+          <div className='section games'>
+            <div className="section-heading">
+              <h3>Game Projects</h3>
+              <FontAwesomeIcon icon={faArrowRight} className="scroll-hint" />
+            </div>
+            <div className="project-row">
+              {ProjectsData.games.map((project) => (
+                <div key={project.id} className='project-card'>
+                  <h4>{project.name}</h4>
+                  <img src={project.thumbnail} alt={project.name} />
+                  <a href={project.github} target="_blank" rel="noopener noreferrer"><b>Itch Page</b></a>
+                </div>
+              ))}
+            </div>
+          </div>
           <div className='section codepath'>
             <div className="section-heading">
               <h3>Codepath Projects</h3>
