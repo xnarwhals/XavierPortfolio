@@ -132,7 +132,9 @@ function QuickPortfolio() {
               {ProjectsData.games.map((project) => (
                 <div key={project.id} className='project-card'>
                   <h4>{project.name}</h4>
-                  <img src={project.thumbnail} alt={project.name} />
+                  <a href={project.github} target="_blank" rel="noopener noreferrer">
+                    <img src={project.thumbnail} alt={project.name} />
+                  </a>
                   <a href={project.github} target="_blank" rel="noopener noreferrer"><b>Itch Page</b></a>
                 </div>
               ))}
@@ -147,7 +149,9 @@ function QuickPortfolio() {
               {ProjectsData.codepath.map((project) => (
                 <div key={project.id} className='project-card'>
                   <h4>{project.name}</h4>
-                  <div dangerouslySetInnerHTML={{ __html: project.thumbnail }} />
+                  <a href={project.github} target="_blank" rel="noopener noreferrer">
+                    <div dangerouslySetInnerHTML={{ __html: project.thumbnail }} />
+                  </a>
                   <a href={project.github} target="_blank" rel="noopener noreferrer"><b>GitHub Repo</b></a>
                 </div>
               ))}
@@ -162,7 +166,9 @@ function QuickPortfolio() {
               {ProjectsData.personal.map((project) => (
                 <div key={project.id} className='project-card'>
                   <h4>{project.name}</h4>
-                  <img src={project.thumbnail} alt={project.name} />
+                  <a href={project.github} target="_blank" rel="noopener noreferrer">
+                    <img src={project.thumbnail} alt={project.name} />
+                  </a>
                   <a href={project.github} target="_blank" rel="noopener noreferrer"><b>GitHub Repo</b></a>
                 </div>
               ))}
@@ -177,7 +183,9 @@ function QuickPortfolio() {
               {ProjectsData.misc.map((project) => (
                 <div key={project.id} className='project-card'>
                   <h4>{project.name}</h4>
-                  <img src={project.thumbnail} alt={project.name} />
+                  <a href={project.github} target="_blank" rel="noopener noreferrer">
+                    <img src={project.thumbnail} alt={project.name} />
+                  </a>
                   <a href={project.github} target="_blank" rel="noopener noreferrer"><b>GitHub Repo</b></a>
                 </div>
               ))}
