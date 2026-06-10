@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Award, Gamepad2, Calendar, Gift, BadgeQuestionMark } from 'lucide-react';
+import { Award, Gamepad2, Calendar, Gift, BadgeQuestionMark, Palette } from 'lucide-react';
 
 // AI generated reusable header
 
@@ -14,7 +14,9 @@ export default function FunAchievementsHeader( { title }) {
     "Cartridges": <Gamepad2 className="w-7 h-7 text-purple-400 shrink-0" />,
     "Skillset": <Award className="w-7 h-7 text-red-400 shrink-0" />,
     "Card Packs": <Gift className="w-7 h-7 text-pink-400 shrink-0" />,
-    "Services": <BadgeQuestionMark className="w-7 h-7 text-orange-400 shrink-0" />
+    "Services": <BadgeQuestionMark className="w-7 h-7 text-orange-400 shrink-0" />,
+    "Design": <Palette className="w-7 h-7 text-yellow-400 shrink-0" />
+
   }
 
 

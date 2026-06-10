@@ -39,6 +39,12 @@ const ProjectsData = {
             name: 'PacPush',
             github: 'https://gameheads.itch.io/pacpush',
             thumbnail: `${baseUrl}Imgs/Thumbnails/pacpush.png`
+        },
+        {
+            id: 7,
+            name: 'Wizop',
+            github: 'https://xnarwhals.itch.io/wizop',
+            thumbnail: `${baseUrl}Imgs/Thumbnails/wizop.png`
         }
     ],
 

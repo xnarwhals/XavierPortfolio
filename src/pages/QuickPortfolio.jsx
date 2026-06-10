@@ -81,7 +81,7 @@ function QuickPortfolio() {
                   </i>
               </li>
               <li>
-                  <h2>Game Projects</h2>
+                  <h2>Gameheads</h2>
                   <div className="game-text">
                       <div className="project">
                           <h3>

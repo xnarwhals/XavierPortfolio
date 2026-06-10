@@ -9,7 +9,8 @@ import {
   faHome,
   faSuitcase,
   faUser,
-  faClipboardQuestion
+  faClipboardQuestion,
+  faPaintBrush
 } from '@fortawesome/free-solid-svg-icons'
 import {
   faGithub,
@@ -119,6 +120,16 @@ function NavBar() {
         >
           <FontAwesomeIcon icon={faUser} />
           <span>About</span>
+        </NavLink>
+        <NavLink
+          to="/art"
+          className={({ isActive }) =>
+            `nav-bar__link ${isActive ? 'is-active' : ''}`
+          }
+          onClick={closeMenu}
+        >
+          <FontAwesomeIcon icon={faPaintBrush} />
+          <span>Art</span>
         </NavLink>
         <NavLink
           to={portfolioPath}

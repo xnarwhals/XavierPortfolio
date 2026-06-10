@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Rajdhani:wght@500;600&display=swap');
+
+  .gsb-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 0 28px;
+    height: 52px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #C9A84C;
+    transition: color 0.15s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .gsb-frame {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: visible;
+  }
+
+  .gsb-border-outer { stroke: #C9A84C; stroke-width: 1.5; fill: none; transition: stroke-width 0.15s ease; }
+  .gsb-border-inner { stroke: #C9A84C; stroke-width: 0.5; fill: none; opacity: 0.45; transition: opacity 0.15s ease; }
+  .gsb-fill         { fill: #C9A84C; opacity: 0; transition: opacity 0.2s ease; }
+  .gsb-corner       { fill: #C9A84C; transform-origin: center; }
+  .gsb-scan         { stroke: #C9A84C; stroke-width: 1; opacity: 0; }
+  .gsb-tick         { stroke: #C9A84C; stroke-width: 1; opacity: 0.5; transition: opacity 0.15s ease, stroke-width 0.15s ease; }
+  .gsb-bracket      { stroke: #C9A84C; stroke-width: 1.5; fill: none; stroke-dasharray: 22; stroke-dashoffset: 22; transition: stroke-dashoffset 0.22s ease; }
+  .gsb-diamond      { fill: none; stroke: #C9A84C; stroke-width: 1; }
+  .gsb-diamond-in   { fill: #C9A84C; transform-origin: center; }
+
+  .gsb-btn:hover .gsb-border-outer { stroke-width: 2; }
+  .gsb-btn:hover .gsb-border-inner { opacity: 0.9; }
+  .gsb-btn:hover .gsb-bracket      { stroke-dashoffset: 0; }
+  .gsb-btn:hover .gsb-tick         { opacity: 1; stroke-width: 1.5; }
+
+  .gsb-btn.selected                    { color: #0a0a0a; }
+  .gsb-btn.selected .gsb-fill          { opacity: 1; }
+  .gsb-btn.selected .gsb-border-inner  { opacity: 0.25; }
+  .gsb-btn.selected .gsb-corner        { fill: #0a0a0a; opacity: 0.2; }
+  .gsb-btn.selected .gsb-tick          { stroke: #0a0a0a; opacity: 0.25; }
+  .gsb-btn.selected .gsb-bracket       { stroke-dashoffset: 0; stroke: #0a0a0a; opacity: 0.2; }
+  .gsb-btn.selected .gsb-diamond       { stroke: #0a0a0a; opacity: 0.35; }
+  .gsb-btn.selected .gsb-diamond-in    { fill: #0a0a0a; opacity: 0.4; }
+
+  .gsb-btn:active { transform: scale(0.97); }
+
+  @keyframes scanDown {
+    0%   { transform: translateY(-120%); opacity: 0; }
+    15%  { opacity: 0.9; }
+    85%  { opacity: 0.9; }
+    100% { transform: translateY(180%); opacity: 0; }
+  }
+  .gsb-btn.scanning .gsb-scan { opacity: 1; animation: scanDown 0.32s ease forwards; }
+
+  @keyframes cornerBurst {
+    0%   { opacity: 1; transform: scale(1); }
+    50%  { opacity: 1; transform: scale(2); }
+    100% { opacity: 0.2; transform: scale(1); }
+  }
+  .gsb-btn.burst .gsb-corner { animation: cornerBurst 0.28s ease forwards; }
+
+  @keyframes tickFlash {
+    0%   { opacity: 0; }
+    40%  { opacity: 1; stroke-width: 2.5; }
+    100% { opacity: 0.5; stroke-width: 1; }
+  }
+  .gsb-btn.burst .gsb-tick { animation: tickFlash 0.3s ease forwards; }
+
+  .gsb-group { display: flex; flex-wrap: wrap; gap: 12px; }
