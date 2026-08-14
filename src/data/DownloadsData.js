@@ -7,7 +7,7 @@ const DOWNLOADS = [
         previewImage: `${baseUrl}Downloads/FikaPet/FikaPet.png`,
         description: "A happy little cat that inspires you to do work and take breaks. You deserve to be happy; have a Fika.",
         type: "Windows App",
-        downloadLink: `${baseUrl}Downloads/FikaPet/DesktopFika.Package_1.0.1.0_x64.msixbundle`,
+        downloadLink: `${baseUrl}Downloads/FikaPet/DesktopFika.zip`,
         appInfo: {
             systemRequirements: "Windows 10 or later",
             version: "1.0.1.0",

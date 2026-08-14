@@ -1,7 +1,7 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import PageLayout from '../components/PageLayout'
 import Header from '../components/Header'
-import { Download as DownloadIcon, FileArchive, Monitor, ShieldCheck } from 'lucide-react'
+import { Download as DownloadIcon, FileArchive, Monitor, ShieldCheck, X } from 'lucide-react'
 import GoldButton from '../components/GoldButton'
 import DOWNLOADS from '../data/DownloadsData'
 import './Download.scss'
@@ -11,13 +11,28 @@ function Download() {
     const activeDownload = DOWNLOADS[activeIndex]
     const appInfo = activeDownload.appInfo ?? {}
     const isPdf = activeDownload.previewType === 'pdf'
+    const [showRunGuide, setShowRunGuide] = useState(false)
+
+    const closeRunGuide = () => setShowRunGuide(false)
+
+    useEffect(() => {
+        if (!showRunGuide) return undefined
+
+        const handleKeyDown = (event) => {
+            if (event.key === 'Escape') closeRunGuide()
+        }
+
+        window.addEventListener('keydown', handleKeyDown)
+        return () => window.removeEventListener('keydown', handleKeyDown)
+    }, [showRunGuide])
 
     return (
-        <PageLayout
-            kicker="Download"
-            title="Download My Stuff"
-            className="page--download"
-            feature={(
+        <>
+            <PageLayout
+                kicker="Nerf This!"
+                title="Download My Stuff"
+                className="page--download"
+                feature={(
                 <div className="download-feature">
                     <Header title="Download" />
                     <ul className="download-list">
@@ -40,8 +55,8 @@ function Download() {
                         ))}
                     </ul>
                 </div>
-            )}
-            children={(
+                )}
+                children={(
                 <div className="download-showcase">
                     <figure className="download-preview">
                         <div className="download-preview__frame">
@@ -106,14 +121,60 @@ function Download() {
                             <p>Its safe, trust me bro</p>
                         </div>
 
-                        <a className="download-action" href={activeDownload.downloadLink} download>
-                            <DownloadIcon size={19} aria-hidden="true" />
-                            <span>Safe download</span>
-                        </a>
+                        <div className="download-actions">
+                            <a className="download-action" href={activeDownload.downloadLink} download>
+                                <DownloadIcon size={19} aria-hidden="true" />
+                                <span>Safe download</span>
+                            </a>
+                            {!isPdf && (
+                                <button
+                                    className="download-how-to"
+                                    type="button"
+                                    onClick={() => setShowRunGuide(true)}
+                                >
+                                    How to run
+                                </button>
+                            )}
+                        </div>
+                    </section>
+                </div>
+                )}
+            />
+
+            {showRunGuide && (
+                <div
+                    className="download-modal"
+                    role="presentation"
+                    onMouseDown={(event) => {
+                        if (event.target === event.currentTarget) closeRunGuide()
+                    }}
+                >
+                    <section
+                        className="download-modal__dialog"
+                        role="dialog"
+                        aria-modal="true"
+                        aria-labelledby="download-modal-title"
+                    >
+                        <div className="download-modal__header">
+                            <h2 id="download-modal-title">How to run Desktop Fika</h2>
+                            <button
+                                className="download-modal__close"
+                                type="button"
+                                onClick={closeRunGuide}
+                                aria-label="Close how to run instructions"
+                            >
+                                <X size={20} aria-hidden="true" />
+                            </button>
+                        </div>
+                        <img
+                            className="download-modal__image"
+                            src={`${import.meta.env.BASE_URL}Downloads/FikaPet/LaunchFika.png`}
+                            alt="Instructions for launching Desktop Fika"
+                        />
                     </section>
                 </div>
             )}
-        />
+        </>
     )
 }
 
