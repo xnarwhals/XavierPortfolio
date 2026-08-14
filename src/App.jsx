@@ -8,6 +8,7 @@ import QuickPortfolio from './pages/QuickPortfolio'
 import Secret from './pages/Secret'
 import Services from './pages/Services'
 import Art from './pages/Art'
+import Download from './pages/Download'
 import './App.scss'
 
 
@@ -25,6 +26,7 @@ function App() {
           <Route path="achievements" element={<Achievements />} />
           <Route path="services" element={<Services />} />
           <Route path="art" element={<Art />} />
+          <Route path="download" element={<Download />} />
         </Route>
       </Routes>
     </>

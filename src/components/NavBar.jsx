@@ -10,7 +10,8 @@ import {
   faSuitcase,
   faUser,
   faClipboardQuestion,
-  faPaintBrush
+  faPaintBrush,
+  faDownload,
 } from '@fortawesome/free-solid-svg-icons'
 import {
   faGithub,
@@ -111,6 +112,7 @@ function NavBar() {
           <FontAwesomeIcon icon={faHome} />
           <span>Home</span>
         </NavLink>
+
         <NavLink
           to="/about"
           className={({ isActive }) =>
@@ -121,6 +123,7 @@ function NavBar() {
           <FontAwesomeIcon icon={faUser} />
           <span>About</span>
         </NavLink>
+
         <NavLink
           to="/art"
           className={({ isActive }) =>
@@ -131,6 +134,7 @@ function NavBar() {
           <FontAwesomeIcon icon={faPaintBrush} />
           <span>Art</span>
         </NavLink>
+
         <NavLink
           to={portfolioPath}
           className={({ isActive }) =>
@@ -141,6 +145,7 @@ function NavBar() {
           <FontAwesomeIcon icon={faSuitcase} />
           <span>Portfolio</span>
         </NavLink>
+
         <NavLink
           to="/achievements"
           className={({ isActive }) =>
@@ -151,6 +156,7 @@ function NavBar() {
           <FontAwesomeIcon icon={faGamepad} />
           <span>Achievements</span>
         </NavLink>
+
         <NavLink
           to="/services"
           className={({ isActive }) =>
@@ -161,6 +167,18 @@ function NavBar() {
           <FontAwesomeIcon icon={faClipboardQuestion} />
           <span>Services</span>
         </NavLink>
+
+        <NavLink
+          to="/download"
+          className={({ isActive }) =>
+            `nav-bar__link ${isActive ? 'is-active' : ''}`
+          }
+          onClick={closeMenu}
+        >
+          <FontAwesomeIcon icon={faDownload} />
+          <span>Download</span>
+        </NavLink>
+
         <NavLink
           to="/secret"
           className={({ isActive }) =>
