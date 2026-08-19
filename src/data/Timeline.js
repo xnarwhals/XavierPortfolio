@@ -97,7 +97,7 @@ const TIMELINE = [
       'As the lead for our club’s technical infrastructure, I manage and coordinate a team of six developers responsible for maintaining shared codebases, tools, and repositories. This role involves structuring and overseeing GitHub issues, milestones, and project workflows to keep development organized, transparent, and on schedule. By establishing clear processes and documentation, I help ensure that projects remain scalable and approachable for both new and experienced contributors.',
       'In addition to infrastructure work, I support weekly iOS development workshops by keeping tooling, starter projects, and example code clean, accessible, and up to date. Beyond the technical responsibilities, I focus on fostering a collaborative and mentorship-driven environment where students can confidently contribute, learn from one another, and grow as developers within an inclusive and supportive community.',
     ],
-    endDate: 'Present',
+    endDate: 'June 2026',
   },
   {
     period: 'September 20, 2025',
@@ -111,14 +111,29 @@ const TIMELINE = [
     endDate: 'Present',
   },
   {
-    period: 'Summer 2026 (Future)',
-    title: 'Blizzard Build Engineer Intern',
-    subtitle: 'Irvine, CA',
-    detailTitle: 'Working on Overwatch 2 Build Systems!',
+    period: 'June 15, 2026',
+    title: 'Overwatch Build Engineer Intern',
+    subtitle: 'Blizzard | Irvine, CA',
+    detailTitle: 'Building tools that make Overwatch playtesting easier',
     details: [
-      'STAY TUNED!',
+      'During my internship with Blizzard\'s Overwatch team, I got to work on the tools behind internal playtesting. I built a C# cross-application URI protocol that turned playtest configurations into shareable links, then extended REST APIs and database-backed services so those configurations could be saved and retrieved. Seeing an individual setup become something other developers could use made the connection between backend systems and everyday developer experience feel very tangible.',
+      'That work also brought me into the Overwatch build management portal, where I added React features for launching playtests and choosing builds by branch. I learned to understand a workflow before changing it by researching what developers and QA needed, explaining why a change was worth making, and using Scrum to shape and refine the work with the team. Automating repetitive setup tasks was satisfying, but the bigger lesson was learning that a feature is only successful when it genuinely makes someone\'s day easier.',
     ],
-    endDate: 'TBD',
+    images: [
+      {
+        src: `${baseUrl}Imgs/Timeline/ow_1.jpg`,
+        alt: 'Overwatch Image 1',
+      },
+      {
+        src: `${baseUrl}Imgs/Timeline/ow_2.jpg`,
+        alt: 'Overwatch Image 2',
+      },
+      {
+        src: `${baseUrl}Imgs/Timeline/ow_3.jpg`,
+        alt: 'Overwatch Image 3',
+      }
+    ],
+    endDate: 'September 4, 2026',
   }
 ]
 

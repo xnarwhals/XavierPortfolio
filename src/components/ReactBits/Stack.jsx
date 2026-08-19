@@ -1,4 +1,4 @@
-import { motion, useMotionValue, useTransform } from 'motion/react';
+import { motion as Motion, useMotionValue, useTransform } from 'motion/react';
 import { useState, useEffect } from 'react';
 
 function CardRotate({ children, onSendToBack, sensitivity, disableDrag = false }) {
@@ -9,6 +9,8 @@ function CardRotate({ children, onSendToBack, sensitivity, disableDrag = false }
 
   function handleDragEnd(_, info) {
     if (Math.abs(info.offset.x) > sensitivity || Math.abs(info.offset.y) > sensitivity) {
+      x.set(0);
+      y.set(0);
       onSendToBack();
     } else {
       x.set(0);
@@ -18,7 +20,7 @@ function CardRotate({ children, onSendToBack, sensitivity, disableDrag = false }
 
   if (disableDrag) {
     return (
-      <motion.div
+      <Motion.div
         style={{
           position: 'absolute',
           inset: 0,
@@ -27,12 +29,12 @@ function CardRotate({ children, onSendToBack, sensitivity, disableDrag = false }
           y: 0
         }}>
         {children}
-      </motion.div>
+      </Motion.div>
     );
   }
 
   return (
-    <motion.div
+    <Motion.div
       style={{
         position: 'absolute',
         inset: 0,
@@ -43,11 +45,13 @@ function CardRotate({ children, onSendToBack, sensitivity, disableDrag = false }
         rotateY
       }}
       drag
-      dragElastic={0.6}
+      dragConstraints={{ left: -250, right: 250, top: -250, bottom: 250 }}
+      dragElastic={0.2}
+      dragMomentum={false}
       whileTap={{ cursor: 'grabbing' }}
       onDragEnd={handleDragEnd}>
       {children}
-    </motion.div>
+    </Motion.div>
   );
 }
 
@@ -162,14 +166,14 @@ export default function Stack({
       onMouseEnter={() => pauseOnHover && setIsPaused(true)}
       onMouseLeave={() => pauseOnHover && setIsPaused(false)}>
       {stack.map((card, index) => {
-        const randomRotate = randomRotation ? Math.random() * 10 - 5 : 0;
+        const randomRotate = randomRotation ? ((card.id * 13) % 11) - 5 : 0;
         return (
           <CardRotate
             key={card.id}
             onSendToBack={() => sendToBack(card.id)}
             sensitivity={sensitivity}
             disableDrag={shouldDisableDrag}>
-            <motion.div
+            <Motion.div
               style={{
                 width: '100%',
                 height: '100%',
@@ -189,7 +193,7 @@ export default function Stack({
                 damping: animationConfig.damping
               }}>
               {card.content}
-            </motion.div>
+            </Motion.div>
           </CardRotate>
         );
       })}
