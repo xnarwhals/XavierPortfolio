@@ -8,31 +8,50 @@ const ProjectsData = {
             id: 1,
             name: 'Metarrow',
             github: 'https://xnarwhals.itch.io/metarrow',
-            thumbnail: `${baseUrl}Imgs/Thumbnails/metarrow.png`
+            thumbnail: `${baseUrl}Imgs/Thumbnails/metarrow.png`,
+            events: [
+                "CDM End of Year Showcase 2026"
+            ]
         },
         {
             id: 2,
             name: 'Spree',
             github: 'https://gameheads.itch.io/spree',
-            thumbnail: `${baseUrl}Imgs/Thumbnails/spree.png`
+            thumbnail: `${baseUrl}Imgs/Thumbnails/spree.png`,
+            events: [
+                "11th Gameheads Showcase",
+                "Student Day Arcade @ GDC 2026",
+                "Super Bowl Breakfest",
+                "Open Sauce 2026"
+
+            ]
         },
         {
             id: 3,
             name: 'Apartment 510',
             github: 'https://gameheads.itch.io/apartment-510',
-            thumbnail: `${baseUrl}Imgs/Games/VPVR.png`
+            thumbnail: `${baseUrl}Imgs/Games/VPVR.png`,
+            events: [
+                "10th Gameheads Showcase",
+            ]
         },
         {
             id: 4,
             name: 'Colorezz',
             github: 'https://gameheads.itch.io/colorezz',
-            thumbnail: `${baseUrl}Imgs/Thumbnails/colorezz.png`
+            thumbnail: `${baseUrl}Imgs/Thumbnails/colorezz.png`,
+            events: [
+                "9th Gameheads Showcase",
+            ]
         },
         {
             id: 5,
             name: 'Selva',
             github: 'https://gameheads.itch.io/selva',
-            thumbnail: `${baseUrl}Imgs/Thumbnails/selva.png`
+            thumbnail: `${baseUrl}Imgs/Thumbnails/selva.png`,
+            events: [
+                "8th Gameheads Showcase",
+            ]
         },
         {
             id: 6,
@@ -44,7 +63,10 @@ const ProjectsData = {
             id: 7,
             name: 'Wizop',
             github: 'https://xnarwhals.itch.io/wizop',
-            thumbnail: `${baseUrl}Imgs/Thumbnails/wizop.png`
+            thumbnail: `${baseUrl}Imgs/Thumbnails/wizop.png`,
+            events: [
+                "CDM End of Year Showcase 2026"
+            ]
         }
     ],
 
