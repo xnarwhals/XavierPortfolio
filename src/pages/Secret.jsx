@@ -77,7 +77,7 @@ function Secret() {
               <span>Colorezz Pack</span>
             </button>
             <button onClick={() => changePack('VPVR')}>
-              <span>Apt510 Pack</span>
+              <span>Apartment 510 Pack</span>
             </button>
             <button onClick={openSelectedPack}>
               <span>Open Pack!</span>

@@ -98,7 +98,7 @@ function QuickPortfolio() {
                           </h3>
                           
                           <p>First 3D Project, Baked Lighting, Use of Static Data, and Understanding of Unity XR Interaction Framework</p>
-                          <img src={`${baseUrl}Imgs/Games/Game_Apt510.png`} alt="Apt510" />
+                          <img src={`${baseUrl}Imgs/Games/Game_Apt510.png`} alt="Apartment 510" />
                       </div>
                       <div className="project">
                           <h3>

@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faItchIo, faWindows, faApple } from "@fortawesome/free-brands-svg-icons";
 import { faGamepad, faVrCardboard } from "@fortawesome/free-solid-svg-icons";
 import { Link } from 'react-router-dom';
+import ProjectsData from '@/data/ProjectsData';
 
 function Screen({ screenContent, curCartridge }) {
     if (!screenContent) { return (<p style={{ color: "white" }}>Screen Error</p>); }
@@ -143,7 +144,7 @@ function Screen({ screenContent, curCartridge }) {
         ),
         platforms: () => {
             let platformsArray = curCartridge.platforms.split(", ");
-            if (curCartridge.id === "Apt510") {
+            if (curCartridge.id === "Apartment 510") {
                 platformsArray = platformsArray.slice(0, -2);
             }
 
@@ -165,6 +166,24 @@ function Screen({ screenContent, curCartridge }) {
                 </div>
             );
         },
+        events: () => {
+            const events = ProjectsData.games.find(({ name }) => name === curCartridge.id)?.events ?? [];
+
+            return (
+                <div className="events-container">
+                    <h3>Events</h3>
+                    {events.length > 0 ? (
+                        <ul>
+                            {events.map((event) => (
+                                <li key={event}>{event}</li>
+                            ))}
+                        </ul>
+                    ) : (
+                        <p>No events listed</p>
+                    )}
+                </div>
+            );
+        },
     };
 
     const requiresCartridge = new Set([
@@ -174,6 +193,7 @@ function Screen({ screenContent, curCartridge }) {
         "credits",
         "experience",
         "platforms",
+        "events",
     ]);
 
     if (!curCartridge && requiresCartridge.has(screenContent)) {

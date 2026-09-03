@@ -11,7 +11,7 @@ function Gameboy( { onCartridgeInsert } ) {
     const verticalScenes = ["home", "languages", "extra", "frameworks", "design"];
 
     const [sceneIndexLeftRight, setScreenIndexLeftRight] = useState(0); // left and right button functionality
-    const horizontalScenes = ["home", "experience", "platforms"];
+    const horizontalScenes = ["home", "experience", "platforms", "events"];
 
     const [isTransitioning, setIsTransitioning] = useState(false);
 

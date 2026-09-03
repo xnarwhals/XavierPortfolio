@@ -35,7 +35,7 @@ const cartridgeData = [
         platforms: "Windows, Mac, Controller Support"
     },
     {
-        id: "Apt510",
+        id: "Apartment 510",
         image: `${baseUrl}Imgs/Games/Game_Apt510.png`,
         trailerUrl: "https://www.youtube.com/embed/jrzt0Dyz0MU?si=v5-pfKBY-LGzJQE3",
         backImg: `${baseUrl}Imgs/Games/VPVRBack.png`,
