@@ -61,11 +61,20 @@ const ProjectsData = {
         },
         {
             id: 7,
-            name: 'Wizop',
+            name: 'Wizop2D',
             github: 'https://xnarwhals.itch.io/wizop',
             thumbnail: `${baseUrl}Imgs/Thumbnails/wizop.png`,
             events: [
                 "CDM End of Year Showcase 2026"
+            ]
+        },
+        {
+            id: 8,
+            name: 'Wizop',
+            github: 'https://xnarwhals.itch.io/wizop-3d',
+            thumbnail: `${baseUrl}Imgs/Thumbnails/wizop-3d.png`,
+            events: [
+                "12th Gameheads Showcase"
             ]
         }
     ],

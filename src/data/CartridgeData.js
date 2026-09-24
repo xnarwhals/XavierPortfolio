@@ -65,6 +65,21 @@ const cartridgeData = [
         experience: "Advanced C# Scripting, Scriptable Object based item system, and CPU racers",
         itchLink: "https://gameheads.itch.io/spree",
         platforms: "Windows, Mac, Controller Support, Shopping Cart"
+    },
+    {
+        id: "Wizop",
+        image: `${baseUrl}Imgs/Games/Game_Wizop.png`,
+        trailerUrl: "https://www.youtube.com/embed/u8wdz3nKy7Q?si=IIfHRyo_mEExQmZy",
+        backImg: `${baseUrl}Imgs/Games/WizopBack.png`,
+        frontImg: `${baseUrl}Imgs/Games/Wizop.png`,
+        colors: {
+            mainColor: "#ffffff",
+            complementaryColor: "#acf743",
+        },
+        gameGist: "2026 Co-op Cat Wizard Roguelike",
+        experience: "local two-player device/input orchestration, UI state synchronization, and roguelike architecture",
+        itchLink: "https://xnarwhals.itch.io/wizop-3d",
+        platforms: "Windows, Mac, Controller Support"
     }
 
 ]
