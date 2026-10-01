@@ -71,7 +71,7 @@ const ProjectsData = {
         {
             id: 8,
             name: 'Wizop',
-            github: 'https://xnarwhals.itch.io/wizop-3d',
+            github: 'https://play.unity.com/en/games/67726d4e-264a-4bb1-87a9-0bf855ed105d/wizop',
             thumbnail: `${baseUrl}Imgs/Thumbnails/wizop-3d.png`,
             events: [
                 "12th Gameheads Showcase"

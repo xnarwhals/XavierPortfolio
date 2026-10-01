@@ -106,7 +106,7 @@ const TIMELINE = [
     detailTitle: 'Advising fellow peers though CS curriculum',
     details: [
       'I help students navigate degree progression issues by tracking down prerequisite conflicts, understanding course dependencies, and working through institutional requirements to keep graduation on track. This often means digging into documentation, spotting problems early, and finding practical paths forward.',
-      'I also focus on making complex degree requirements easier to understand by turning them into clear, actionable academic plans. So far, I’ve helped over 50 undergraduate students feel more confident about their schedules and long-term academic goals.',
+      'I also focus on making complex degree requirements easier to understand by turning them into clear, actionable academic plans. So far, I’ve helped over 100 undergraduate students feel more confident about their schedules and long-term academic goals.',
     ],
     endDate: 'Present',
   },
