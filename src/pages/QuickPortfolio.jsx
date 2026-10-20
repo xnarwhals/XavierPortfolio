@@ -5,6 +5,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import './QuickPortfolio.scss'
 
+const sortById = (projects) => [...projects].sort((a, b) => a.id - b.id)
+
 function QuickPortfolio() {
   const baseUrl = import.meta.env.BASE_URL
 
@@ -83,6 +85,14 @@ function QuickPortfolio() {
               <li>
                   <h2>Gameheads</h2>
                   <div className="game-text">
+                    <div className="project">
+                          <h3>
+                              Wizop
+                              <h4>2026 Turn-based Co-op Cat Roguelike</h4>
+                          </h3>
+                          <p> Local two-player device/input orchestration, UI state synchronization, and roguelike architecture</p>
+                          <img src={`${baseUrl}Imgs/Games/Game_Wizop.png`} alt="Wizop" />
+                      </div>
                       <div className="project">
                           <h3>
                               Spree
@@ -129,7 +139,7 @@ function QuickPortfolio() {
               <FontAwesomeIcon icon={faArrowRight} className="scroll-hint" />
             </div>
             <div className="project-row">
-              {ProjectsData.games.map((project) => (
+              {sortById(ProjectsData.games).map((project) => (
                 <div key={project.id} className='project-card'>
                   <h4>{project.name}</h4>
                   <a href={project.github} target="_blank" rel="noopener noreferrer">
@@ -146,7 +156,7 @@ function QuickPortfolio() {
               <FontAwesomeIcon icon={faArrowRight} className="scroll-hint" />
             </div>
             <div className="project-row">
-              {ProjectsData.codepath.map((project) => (
+              {sortById(ProjectsData.codepath).map((project) => (
                 <div key={project.id} className='project-card'>
                   <h4>{project.name}</h4>
                   <a href={project.github} target="_blank" rel="noopener noreferrer">
@@ -163,7 +173,7 @@ function QuickPortfolio() {
               <FontAwesomeIcon icon={faArrowRight} className="scroll-hint" />
             </div>
             <div className="project-row">
-              {ProjectsData.personal.map((project) => (
+              {sortById(ProjectsData.personal).map((project) => (
                 <div key={project.id} className='project-card'>
                   <h4>{project.name}</h4>
                   <a href={project.github} target="_blank" rel="noopener noreferrer">
@@ -180,7 +190,7 @@ function QuickPortfolio() {
               <FontAwesomeIcon icon={faArrowRight} className="scroll-hint" />
             </div>
             <div className="project-row">
-              {ProjectsData.misc.map((project) => (
+              {sortById(ProjectsData.misc).map((project) => (
                 <div key={project.id} className='project-card'>
                   <h4>{project.name}</h4>
                   <a href={project.github} target="_blank" rel="noopener noreferrer">

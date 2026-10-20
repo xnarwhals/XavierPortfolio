@@ -5,7 +5,7 @@ const baseUrl = import.meta.env.BASE_URL
 const ProjectsData = {
     games: [
         {
-            id: 1,
+            id: 3,
             name: 'Metarrow',
             github: 'https://xnarwhals.itch.io/metarrow',
             thumbnail: `${baseUrl}Imgs/Thumbnails/metarrow.png`,
@@ -27,7 +27,7 @@ const ProjectsData = {
             ]
         },
         {
-            id: 3,
+            id: 5,
             name: 'Apartment 510',
             github: 'https://gameheads.itch.io/apartment-510',
             thumbnail: `${baseUrl}Imgs/Games/VPVR.png`,
@@ -36,7 +36,7 @@ const ProjectsData = {
             ]
         },
         {
-            id: 4,
+            id: 7,
             name: 'Colorezz',
             github: 'https://gameheads.itch.io/colorezz',
             thumbnail: `${baseUrl}Imgs/Thumbnails/colorezz.png`,
@@ -45,7 +45,7 @@ const ProjectsData = {
             ]
         },
         {
-            id: 5,
+            id: 9,
             name: 'Selva',
             github: 'https://gameheads.itch.io/selva',
             thumbnail: `${baseUrl}Imgs/Thumbnails/selva.png`,
@@ -54,13 +54,13 @@ const ProjectsData = {
             ]
         },
         {
-            id: 6,
+            id: 8,
             name: 'PacPush',
             github: 'https://gameheads.itch.io/pacpush',
             thumbnail: `${baseUrl}Imgs/Thumbnails/pacpush.png`
         },
         {
-            id: 7,
+            id: 6,
             name: 'Wizop2D',
             github: 'https://xnarwhals.itch.io/wizop',
             thumbnail: `${baseUrl}Imgs/Thumbnails/wizop.png`,
@@ -69,12 +69,21 @@ const ProjectsData = {
             ]
         },
         {
-            id: 8,
+            id: 1,
             name: 'Wizop',
             github: 'https://play.unity.com/en/games/67726d4e-264a-4bb1-87a9-0bf855ed105d/wizop',
             thumbnail: `${baseUrl}Imgs/Thumbnails/wizop-3d.png`,
             events: [
                 "12th Gameheads Showcase"
+            ]
+        },
+        {
+            id: 4,
+            name: 'Scaredy Cat',
+            github: 'https://xnarwhals.itch.io/scaredy-cat',
+            thumbnail: `${baseUrl}Imgs/Thumbnails/catjam.png`,
+            events: [
+                "GDAC 48 Hour Game Jam 2026"
             ]
         }
     ],
